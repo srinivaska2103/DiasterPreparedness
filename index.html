@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/lifeguard.png">
+    <title>SafeGuard | Disaster Preparedness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        // Tailwind Config for Dark Mode
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        emergency: '#dc2626', // High-visibility red
+                        safety: '#059669',    // Trust green
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+<nav id="main-nav" class="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <a href="index.html" class="flex-shrink-0 font-black text-2xl text-emergency italic tracking-tighter cursor-pointer">
+                SAFEGUARD
+            </a>
+            
+            <div id="desktop-links" class="hidden lg:flex items-center space-x-8 text-sm font-bold uppercase tracking-wide">
+                <a href="index.html" class="nav-link transition-colors hover:text-emergency">Home1</a>
+                <a href="home2.html" class="nav-link transition-colors hover:text-emergency">Home2</a>
+                <a href="about.html" class="nav-link transition-colors hover:text-emergency">About</a>
+                <a href="shop.html" class="nav-link transition-colors hover:text-emergency">Shop</a>
+                <a href="gallery.html" class="nav-link transition-colors hover:text-emergency">Gallery</a>
+                <a href="pricing.html" class="nav-link transition-colors hover:text-emergency">Pricing</a>
+                <a href="contact.html" class="nav-link transition-colors hover:text-emergency">Contact</a>
+            </div>
+
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <div class="hidden sm:flex items-center bg-gray-100 dark:bg-gray-800 rounded-full p-1 border dark:border-gray-700">
+                    <button class="js-theme-toggle w-8 h-8 flex items-center justify-center rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all shadow-sm">
+                        <i class="fas fa-moon text-xs"></i>
+                    </button>
+                    <button class="js-dir-toggle w-10 h-8 flex items-center justify-center rounded-full text-[10px] font-black hover:bg-white dark:hover:bg-gray-700 transition-all">
+                        LTR
+                    </button>
+                </div>
+
+                <a href="login.html" class="hidden md:inline-block bg-emergency text-white px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:bg-red-700 shadow-lg transition-all">
+                    Register
+                </a>
+
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 dark:text-gray-300 focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                    <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 pt-4 pb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1 mb-6">
+                <a href="index.html" class="nav-link flex items-center px-4 py-4 text-base font-bold border-b border-gray-50 dark:border-gray-800 hover:text-emergency dark:text-white transition-colors">
+                    <i class="fas fa-home w-6 text-sm opacity-50"></i> Home1
+                </a>
+                <a href="home2.html" class="nav-link flex items-center px-4 py-4 text-base font-bold border-b border-gray-50 dark:border-gray-800 hover:text-emergency dark:text-white transition-colors">
+                    <i class="fas fa-door-open w-6 text-sm opacity-50"></i> Home2
+                </a>
+                <a href="about.html" class="nav-link flex items-center px-4 py-4 text-base font-bold border-b border-gray-50 dark:border-gray-800 hover:text-emergency dark:text-white transition-colors">
+                    <i class="fas fa-info-circle w-6 text-sm opacity-50"></i> About
+                </a>
+                <a href="shop.html" class="nav-link flex items-center px-4 py-4 text-base font-bold border-b border-gray-50 dark:border-gray-800 hover:text-emergency dark:text-white transition-colors">
+                    <i class="fas fa-shopping-bag w-6 text-sm opacity-50"></i> Shop
+                </a>
+                <a href="gallery.html" class="nav-link flex items-center px-4 py-4 text-base font-bold border-b border-gray-50 dark:border-gray-800 hover:text-emergency dark:text-white transition-colors">
+                    <i class="fas fa-images w-6 text-sm opacity-50"></i> Gallery
+                </a>
+                <a href="pricing.html" class="nav-link flex items-center px-4 py-4 text-base font-bold border-b border-gray-50 dark:border-gray-800 hover:text-emergency dark:text-white transition-colors">
+                    <i class="fas fa-tags w-6 text-sm opacity-50"></i> Pricing
+                </a>
+                <a href="contact.html" class="nav-link flex items-center px-4 py-4 text-base font-bold border-b md:border-b-0 border-gray-50 dark:border-gray-800 hover:text-emergency dark:text-white transition-colors">
+                    <i class="fas fa-envelope w-6 text-sm opacity-50"></i> Contact
+                </a>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-gray-100 dark:border-gray-800 pt-6">
+                <div class="flex items-center bg-gray-100 dark:bg-gray-800 rounded-full p-1.5 border border-gray-200 dark:border-gray-700 w-full sm:w-auto justify-center">
+                    <button class="js-theme-toggle flex-1 sm:flex-none w-14 h-11 flex items-center justify-center rounded-full bg-white dark:bg-gray-700 shadow-sm transition-all dark:text-white">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="js-dir-toggle flex-1 sm:flex-none px-8 h-11 flex items-center justify-center rounded-full text-[11px] font-black uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                        LTR
+                    </button>
+                </div>
+                <a href="login.html" class="w-full sm:w-auto text-center bg-emergency text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-red-700 shadow-lg transition-all">
+                    Register Now
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const html = document.documentElement;
+        const themeBtns = document.querySelectorAll('.js-theme-toggle');
+        const dirBtns = document.querySelectorAll('.js-dir-toggle');
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        // --- THEME LOGIC ---
+        const setTheme = (isDark) => {
+            if (isDark) {
+                html.classList.add('dark');
+                themeBtns.forEach(btn => btn.innerHTML = '<i class="fas fa-sun text-xs text-yellow-500"></i>');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                themeBtns.forEach(btn => btn.innerHTML = '<i class="fas fa-moon text-xs"></i>');
+                localStorage.setItem('theme', 'light');
+            }
+        };
+
+        themeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setTheme(!html.classList.contains('dark'));
+            });
+        });
+
+        // --- DIRECTION LOGIC ---
+        const setDir = (dir) => {
+            html.setAttribute('dir', dir);
+            dirBtns.forEach(btn => btn.innerText = dir.toUpperCase());
+            localStorage.setItem('dir', dir);
+        };
+
+        dirBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const currentDir = html.getAttribute('dir') || 'ltr';
+                setDir(currentDir === 'ltr' ? 'rtl' : 'ltr');
+            });
+        });
+
+        // --- ACTIVE LINK LOGIC ---
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('text-emergency');
+                if (link.classList.contains('flex')) {
+                    link.classList.add('bg-red-50', 'dark:bg-red-900/10');
+                }
+            }
+        });
+
+        // --- MOBILE MENU TOGGLE ---
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                menuIcon.className = isHidden ? 'fas fa-bars text-2xl' : 'fas fa-times text-2xl';
+            });
+        }
+
+        // --- INITIALIZE FROM STORAGE ---
+        if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setTheme(true);
+        }
+        if (localStorage.dir) {
+            setDir(localStorage.dir);
+        }
+    });
+</script>
+    
+<style>
+    /* Keyframes moved into standard CSS for better compatibility */
+    @keyframes slow-zoom {
+        0%, 100% { transform: scale(1.05); }
+        50% { transform: scale(1.15); }
+    }
+    @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade-in-down {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Prevent any horizontal shift during animation */
+    .hero-lock {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+</style>
+
+<header class="hero-lock h-[90vh] md:h-screen flex items-center justify-center bg-gray-950">
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="w-full h-full animate-[slow-zoom_20s_ease-in-out_infinite]">
+            <img src="assets/Community Awareness" 
+                 alt="Emergency Kit" 
+                 class="w-full h-full object-cover opacity-60">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black/95"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-4 sm:px-6 w-full max-w-7xl mx-auto flex flex-col items-center">
+        
+        <div class="mb-6 opacity-0 animate-[fade-in-down_0.8s_ease-out_forwards] inline-flex items-center space-x-2 bg-red-600/20 border border-red-600/30 px-3 py-1.5 rounded-full backdrop-blur-md">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+            </span>
+            <span class="text-red-500 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">New 2026 Survival Kits Available</span>
+        </div>
+
+        <h1 class="opacity-0 animate-[fade-in-up_1s_ease-out_0.2s_forwards] text-[34px] leading-[1.1] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-white tracking-tighter mb-6 uppercase italic">
+            Be Ready Before <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-800">
+                Disaster
+            </span> Strikes
+        </h1>
+
+        <p class="opacity-0 animate-[fade-in-up_1s_ease-out_0.4s_forwards] text-sm md:text-lg lg:text-xl text-gray-300 max-w-[320px] sm:max-w-md md:max-w-2xl mb-10 leading-relaxed font-medium mx-auto">
+            Equip yourself with professional-grade gear and field-tested strategies. In a crisis, your gear is your lifeline.
+        </p>
+
+        <div class="opacity-0 animate-[fade-in-up_1s_ease-out_0.6s_forwards] flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto px-4 sm:px-0">
+           <a href="shop.html" class="w-full sm:w-auto">
+                <button class="group w-full sm:w-auto bg-red-600 text-white px-8 py-4 md:py-5 rounded-xl font-black text-xs md:text-sm uppercase tracking-widest transition-all hover:bg-red-700 active:scale-95 shadow-lg shadow-red-600/20">
+                    <span class="flex items-center justify-center">
+                        Shop Survival Gear
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </span>
+                </button>
+           </a>
+            
+            <a href="comingsoon.html" class="w-full sm:w-auto">
+                <button class="w-full sm:w-auto bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 text-white px-8 py-4 md:py-5 rounded-xl font-black text-xs md:text-sm uppercase tracking-widest transition-all active:scale-95">
+                    Learn Preparedness
+                </button>
+            </a>
+        </div>
+
+        <div class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden sm:block">
+            <div class="w-[2px] h-8 md:h-12 bg-gradient-to-b from-red-600 to-transparent opacity-50"></div>
+        </div>
+    </div>
+</header>
+
+
+<section class="py-24 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="relative group">
+                <div class="absolute -inset-4 bg-emergency/5 dark:bg-emergency/10 rounded-[3rem] rotate-3 group-hover:rotate-0 transition-transform duration-500"></div>
+                
+                <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl">
+                    <img src="assets/index img1" 
+                         alt="Team in Field" class="w-full h-full object-cover">
+                    
+                    <div class="absolute bottom-8 right-8 bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-xl border border-slate-100 dark:border-gray-700 transition-colors">
+                        <span class="block text-3xl font-black text-emergency leading-none">15+</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-gray-400">Years Field Exp.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-emergency font-black uppercase tracking-[0.3em] text-xs mb-4">Our Mission</h3>
+                    <h2 class="text-4xl md:text-6xl font-black text-slate-900 dark:text-white leading-tight tracking-tighter uppercase italic">
+                        Built for the <br> <span class="text-emergency">Unexpected.</span>
+                    </h2>
+                </div>
+                
+                <p class="text-slate-600 dark:text-gray-300 text-lg leading-relaxed">
+                    SAFEGUARD was founded in 2024 by a team of first responders and wilderness survival experts. We believe that preparedness shouldn't be a hobby—it's a fundamental responsibility. Our gear is field-tested in the most extreme conditions to ensure that when the world goes dark, your light stays on.
+                </p>
+                
+                <div class="grid grid-cols-2 gap-8 pt-4">
+                    <div class="border-l-4 border-emergency pl-6">
+                        <h4 class="text-2xl font-black text-slate-900 dark:text-white">50k+</h4>
+                        <p class="text-xs text-slate-500 dark:text-gray-400 uppercase font-bold tracking-widest">Lives Impacted</p>
+                    </div>
+                    <div class="border-l-4 border-slate-900 dark:border-gray-500 pl-6 transition-colors">
+                        <h4 class="text-2xl font-black text-slate-900 dark:text-white">100%</h4>
+                        <p class="text-xs text-slate-500 dark:text-gray-400 uppercase font-bold tracking-widest">Field Tested</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-16 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between items-end mb-10">
+            <div>
+             <h2 class="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-slate-900 dark:text-white uppercase leading-none">
+        Quick <span class="text-emergency">Categories</span>
+    </h2>
+                <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">Essential gear for every disaster scenario.</p>
+            </div>
+            <a href="#" class="hidden sm:block text-emergency font-bold text-sm hover:underline tracking-widest uppercase">View All Gear →</a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            
+            <div class="group relative bg-gray-50 dark:bg-gray-800 p-4 rounded-2xl border border-transparent hover:border-emergency/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 cursor-pointer flex flex-col items-center text-center">
+                <div class="w-full aspect-square overflow-hidden rounded-xl mb-4 bg-white dark:bg-gray-700 shadow-sm group-hover:shadow-md transition-all duration-500">
+                    <img src="assets/Emergency Kits" 
+                         alt="Emergency Kits" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <h3 class="font-bold text-sm md:text-base dark:text-white">Emergency Kits</h3>
+                <span class="text-[10px] text-emergency font-black uppercase mt-1 opacity-0 group-hover:opacity-100 transition-opacity tracking-widest">Explore</span>
+            </div>
+
+            <div class="group relative bg-gray-50 dark:bg-gray-800 p-4 rounded-2xl border border-transparent hover:border-emergency/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 cursor-pointer flex flex-col items-center text-center">
+                <div class="w-full aspect-square overflow-hidden rounded-xl mb-4 bg-white dark:bg-gray-700 shadow-sm group-hover:shadow-md transition-all duration-500">
+                    <img src="assets/Survival Tools" 
+                         alt="Survival Tools" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <h3 class="font-bold text-sm md:text-base dark:text-white">Survival Tools</h3>
+                <span class="text-[10px] text-emergency font-black uppercase mt-1 opacity-0 group-hover:opacity-100 transition-opacity tracking-widest">Explore</span>
+            </div>
+
+            <div class="group relative bg-gray-50 dark:bg-gray-800 p-4 rounded-2xl border border-transparent hover:border-emergency/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 cursor-pointer flex flex-col items-center text-center">
+                <div class="w-full aspect-square overflow-hidden rounded-xl mb-4 bg-white dark:bg-gray-700 shadow-sm group-hover:shadow-md transition-all duration-500">
+                    <img src="assets/food and water" 
+                         alt="Water & Food" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <h3 class="font-bold text-sm md:text-base dark:text-white">Water & Food</h3>
+                <span class="text-[10px] text-emergency font-black uppercase mt-1 opacity-0 group-hover:opacity-100 transition-opacity tracking-widest">Explore</span>
+            </div>
+
+            <div class="group relative bg-gray-50 dark:bg-gray-800 p-4 rounded-2xl border border-transparent hover:border-emergency/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 cursor-pointer flex flex-col items-center text-center">
+                <div class="w-full aspect-square overflow-hidden rounded-xl mb-4 bg-white dark:bg-gray-700 shadow-sm group-hover:shadow-md transition-all duration-500">
+                    <img src="assets/Medical Supplies" 
+                         alt="Medical Supplies" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <h3 class="font-bold text-sm md:text-base dark:text-white">Medical Supplies</h3>
+                <span class="text-[10px] text-emergency font-black uppercase mt-1 opacity-0 group-hover:opacity-100 transition-opacity tracking-widest">Explore</span>
+            </div>
+
+            <div class="group relative bg-gray-50 dark:bg-gray-800 p-4 rounded-2xl border border-transparent hover:border-emergency/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 cursor-pointer flex flex-col items-center text-center">
+                <div class="w-full aspect-square overflow-hidden rounded-xl mb-4 bg-white dark:bg-gray-700 shadow-sm group-hover:shadow-md transition-all duration-500">
+                    <img src="assets/Power and light" 
+                         alt="Power & Light" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <h3 class="font-bold text-sm md:text-base dark:text-white">Power & Light</h3>
+                <span class="text-[10px] text-emergency font-black uppercase mt-1 opacity-0 group-hover:opacity-100 transition-opacity tracking-widest">Explore</span>
+            </div>
+
+            <div class="group relative bg-gray-50 dark:bg-gray-800 p-4 rounded-2xl border border-transparent hover:border-emergency/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 cursor-pointer flex flex-col items-center text-center">
+                <div class="w-full aspect-square overflow-hidden rounded-xl mb-4 bg-white dark:bg-gray-700 shadow-sm group-hover:shadow-md transition-all duration-500">
+                    <img src="assets/Outdoor Survival" 
+                         alt="Outdoor Survival" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <h3 class="font-bold text-sm md:text-base dark:text-white">Outdoor Gear</h3>
+                <span class="text-[10px] text-emergency font-black uppercase mt-1 opacity-0 group-hover:opacity-100 transition-opacity tracking-widest">Explore</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+<div class="max-w-7xl mx-auto px-4 pb-20">
+    <div class="relative overflow-hidden rounded-3xl bg-emergency p-8 md:p-12 shadow-2xl shadow-red-500/20">
+        
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-black/10 rounded-full blur-2xl"></div>
+
+        <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+            <div class="max-w-xl">
+                <div class="inline-flex items-center space-x-2 bg-black/20 px-3 py-1 rounded-full text-white text-[10px] font-bold uppercase tracking-widest mb-4">
+                    <span class="flex h-2 w-2 rounded-full bg-white animate-pulse"></span>
+                    <span>National Preparedness Month</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black text-white leading-tight">
+                    Are You Truly <span class="italic underline decoration-white/30">Ready</span> for the Unexpected?
+                </h2>
+                <p class="text-red-100 mt-4 text-lg">
+                    Join 50,000+ families who have secured their survival plans with our expert-led preparedness course.
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                <button class="bg-white text-emergency px-8 py-4 rounded-xl font-black uppercase tracking-widest text-sm hover:bg-gray-100 transition-all active:scale-95 shadow-lg">
+                    Get Free Checklist
+                </button>
+                <button class="bg-black/20 hover:bg-black/30 border border-white/30 text-white px-8 py-4 rounded-xl font-black uppercase tracking-widest text-sm transition-all active:scale-95">
+                    View Crisis Map
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="py-20 bg-gray-50 dark:bg-gray-900/50 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4">
+        
+        <div class="flex flex-col items-center text-center mb-12">
+            <h2 class="text-3xl md:text-5xl font-black tracking-tighter dark:text-white uppercase mb-8">
+                Featured <span class="text-emergency">Products</span>
+            </h2>
+            
+            <div class="flex p-1 bg-gray-200 dark:bg-gray-800 rounded-xl space-x-1 mb-10 w-full max-w-lg overflow-x-auto">
+                <button onclick="filterProducts('best')" class="tab-btn active-tab flex-1 px-4 py-2.5 rounded-lg text-xs md:text-sm font-black uppercase tracking-widest transition-all">Best Sellers</button>
+                <button onclick="filterProducts('new')" class="tab-btn flex-1 px-4 py-2.5 rounded-lg text-xs md:text-sm font-black uppercase tracking-widest transition-all text-gray-500 hover:text-gray-900 dark:hover:text-white">New Arrivals</button>
+                <button onclick="filterProducts('expert')" class="tab-btn flex-1 px-4 py-2.5 rounded-lg text-xs md:text-sm font-black uppercase tracking-widest transition-all text-gray-500 hover:text-gray-900 dark:hover:text-white">Expert Kits</button>
+            </div>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div class="absolute top-4 left-4 z-10 bg-emergency text-white text-[10px] font-black px-3 py-1 rounded-full uppercase">Best Seller</div>
+                <div class="relative aspect-[4/5] overflow-hidden bg-gray-100">
+                    <img src="assets/Tactical Backpack" alt="Gear" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/40 flex items-end p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <button class="w-full bg-white text-gray-900 py-3 rounded-xl font-bold text-sm hover:bg-emergency hover:text-white transition-colors">Quick Add</button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg dark:text-white mb-2">Tactical Backpack</h3>
+                    <span class="text-emergency font-black">$189.00</span>
+                </div>
+            </div>
+
+            <div class="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div class="absolute top-4 left-4 z-10 bg-gray-900 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase">Expert Choice</div>
+                <div class="relative aspect-[4/5] overflow-hidden bg-gray-100">
+                    <img src="assets/Trauma Medical Kit" alt="Gear" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/40 flex items-end p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <button class="w-full bg-white text-gray-900 py-3 rounded-xl font-bold text-sm hover:bg-emergency hover:text-white transition-colors">Quick Add</button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg dark:text-white mb-2">Trauma Medical Kit</h3>
+                    <span class="text-emergency font-black">$245.00</span>
+                </div>
+            </div>
+
+            <div class="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div class="absolute top-4 left-4 z-10 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase">Waterproof</div>
+                <div class="relative aspect-[4/5] overflow-hidden bg-gray-100">
+                    <img src="assets/Handheld Survival Radio" alt="Gear" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/40 flex items-end p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <button class="w-full bg-white text-gray-900 py-3 rounded-xl font-bold text-sm hover:bg-emergency hover:text-white transition-colors">Quick Add</button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg dark:text-white mb-2">Handheld Survival Radio</h3>
+                    <span class="text-emergency font-black">$75.00</span>
+                </div>
+            </div>
+
+            <div class="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div class="absolute top-4 left-4 z-10 bg-green-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase">Eco-Friendly</div>
+                <div class="relative aspect-[4/5] overflow-hidden bg-gray-100">
+                    <img src="assets/Solar Panel Array" alt="Gear" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/40 flex items-end p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <button class="w-full bg-white text-gray-900 py-3 rounded-xl font-bold text-sm hover:bg-emergency hover:text-white transition-colors">Quick Add</button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg dark:text-white mb-2">Solar Panel Array</h3>
+                    <span class="text-emergency font-black">$120.00</span>
+                </div>
+            </div>
+
+            <div class="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div class="absolute top-4 left-4 z-10 bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase">New</div>
+                <div class="relative aspect-[4/5] overflow-hidden bg-gray-100">
+                    <img src="assets/Emergency Food Supply" alt="Gear" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/40 flex items-end p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <button class="w-full bg-white text-gray-900 py-3 rounded-xl font-bold text-sm hover:bg-emergency hover:text-white transition-colors">Quick Add</button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg dark:text-white mb-2">Emergency Food Supply</h3>
+                    <span class="text-emergency font-black">$299.00</span>
+                </div>
+            </div>
+
+            <div class="group relative bg-white dark:bg-gray-800 rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div class="absolute top-4 left-4 z-10 bg-emergency text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-tighter">Limited Edition</div>
+                <div class="relative aspect-[4/5] overflow-hidden bg-gray-100">
+                    <img src="assets/Ultimate Survival Kit" alt="Gear" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-black/40 flex items-end p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <button class="w-full bg-white text-gray-900 py-3 rounded-xl font-bold text-sm hover:bg-emergency hover:text-white transition-colors">Quick Add</button>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg dark:text-white mb-2">Ultimate Survival Kit</h3>
+                    <span class="text-emergency font-black">$550.00</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4">
+        
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-black tracking-tighter dark:text-white uppercase mb-4">
+                Knowledge <span class="text-emergency">Center</span>
+            </h2>
+            <p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+                Preparation is 90% of survival. Explore our latest field guides and quick-action disaster tips.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-20">
+            <div class="md:col-span-8 group relative h-96 overflow-hidden rounded-3xl bg-gray-900 shadow-xl cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1504333638930-c8787321eee0?q=80&w=1200" 
+                     class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" alt="Wilderness Survival">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 p-8">
+                    <span class="bg-emergency text-white text-[10px] font-black px-3 py-1 rounded-full uppercase mb-4 inline-block">Featured Guide</span>
+                    <h3 class="text-2xl md:text-4xl font-bold text-white mb-2">The Ultimate 72-Hour Survival Protocol</h3>
+                    <p class="text-gray-300 text-sm md:text-base max-w-lg mb-4">Everything you need to know about the first three days of any major disaster event.</p>
+                    <button class="text-white font-bold border-b-2 border-emergency pb-1 hover:text-emergency transition-colors">Read Full Guide</button>
+                </div>
+            </div>
+
+            <div class="md:col-span-4 group relative h-96 overflow-hidden rounded-3xl bg-gray-100 dark:bg-gray-800 p-8 flex flex-col justify-end border border-gray-100 dark:border-gray-700 hover:border-emergency/50 transition-all cursor-pointer">
+                <div class="mb-auto">
+                    <i class="fas fa-tint text-4xl text-emergency mb-4 block"></i>
+                </div>
+                <h3 class="text-xl font-bold dark:text-white mb-2">Water Purification 101</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">How to find and filter safe drinking water in urban environments.</p>
+                <span class="text-emergency font-black text-xs uppercase tracking-widest">Learn More →</span>
+            </div>
+        </div>
+
+        <h3 class="text-xl font-black dark:text-white uppercase tracking-widest text-center mb-10">Quick Action Tips</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div class="group h-64 [perspective:1000px]">
+                <div class="relative h-full w-full rounded-2xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-lg">
+                    <div class="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 dark:bg-gray-800 flex flex-col items-center justify-center p-6 [backface-visibility:hidden]">
+                        <i class="fas fa-bolt text-3xl text-emergency mb-4"></i>
+                        <h4 class="font-bold dark:text-white text-center">Power Outage</h4>
+                        <p class="text-[10px] text-gray-400 mt-2 uppercase">Hover for Tip</p>
+                    </div>
+                    <div class="absolute inset-0 h-full w-full rounded-2xl bg-emergency p-6 text-white [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col items-center justify-center text-center">
+                        <p class="text-sm font-bold italic">Keep freezers and refrigerators closed. An unopened fridge will keep food cold for about 4 hours.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group h-64 [perspective:1000px]">
+                <div class="relative h-full w-full rounded-2xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-lg">
+                    <div class="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 dark:bg-gray-800 flex flex-col items-center justify-center p-6 [backface-visibility:hidden]">
+                        <i class="fas fa-house-fire text-3xl text-emergency mb-4"></i>
+                        <h4 class="font-bold dark:text-white text-center">Fire Safety</h4>
+                        <p class="text-[10px] text-gray-400 mt-2 uppercase">Hover for Tip</p>
+                    </div>
+                    <div class="absolute inset-0 h-full w-full rounded-2xl bg-emergency p-6 text-white [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col items-center justify-center text-center">
+                        <p class="text-sm font-bold italic">Stay low to the ground. If your clothes catch fire: Stop, Drop, and Roll immediately.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group h-64 [perspective:1000px]">
+                <div class="relative h-full w-full rounded-2xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-lg">
+                    <div class="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 dark:bg-gray-800 flex flex-col items-center justify-center p-6 [backface-visibility:hidden]">
+                        <i class="fas fa-cloud-showers-heavy text-3xl text-emergency mb-4"></i>
+                        <h4 class="font-bold dark:text-white text-center">Flooding</h4>
+                        <p class="text-[10px] text-gray-400 mt-2 uppercase">Hover for Tip</p>
+                    </div>
+                    <div class="absolute inset-0 h-full w-full rounded-2xl bg-emergency p-6 text-white [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col items-center justify-center text-center">
+                        <p class="text-sm font-bold italic">Turn Around, Don't Drown! Just 6 inches of moving water can knock you down.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group h-64 [perspective:1000px]">
+                <div class="relative h-full w-full rounded-2xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-lg">
+                    <div class="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 dark:bg-gray-800 flex flex-col items-center justify-center p-6 [backface-visibility:hidden]">
+                        <i class="fas fa-first-aid text-3xl text-emergency mb-4"></i>
+                        <h4 class="font-bold dark:text-white text-center">First Aid</h4>
+                        <p class="text-[10px] text-gray-400 mt-2 uppercase">Hover for Tip</p>
+                    </div>
+                    <div class="absolute inset-0 h-full w-full rounded-2xl bg-emergency p-6 text-white [transform:rotateY(180deg)] [backface-visibility:hidden] flex flex-col items-center justify-center text-center">
+                        <p class="text-sm font-bold italic">Apply direct pressure to any bleeding wound using clean cloth or gauze until help arrives.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-gray-50 dark:bg-gray-900/50 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4">
+        
+        <div class="flex flex-col items-center text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-black tracking-tighter dark:text-white uppercase mb-4">
+                Ready for <span class="text-emergency">Any Scale</span>
+            </h2>
+            <p class="text-gray-500 dark:text-gray-400 max-w-xl mb-10">
+                Choose a preparedness plan that fits your family size and safety requirements.
+            </p>
+
+            <div class="flex items-center bg-gray-200 dark:bg-gray-800 p-1 rounded-full scale-90 sm:scale-100">
+                <span class="px-4 text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">Monthly</span>
+                <button id="pricing-toggle" class="relative w-14 h-7 bg-emergency rounded-full transition-all">
+                    <div id="toggle-circle" class="absolute top-1 left-1 w-5 h-5 bg-white rounded-full transition-all"></div>
+                </button>
+                <span class="px-4 text-xs font-bold uppercase tracking-widest text-gray-900 dark:text-white">Yearly <span class="text-emergency font-black text-[10px] ml-1">(-20%)</span></span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                <h3 class="text-xl font-bold dark:text-white mb-2">Individual</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Essential survival basics for one person.</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-black dark:text-white">$</span>
+                    <span class="text-5xl font-black dark:text-white price-value" data-monthly="19" data-yearly="15">19</span>
+                    <span class="text-gray-400 font-bold">/mo</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-grow">
+                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-300"><i class="fas fa-check text-emergency mr-3"></i> 72-Hour Basic Kit</li>
+                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-300"><i class="fas fa-check text-emergency mr-3"></i> Monthly Safety Tips</li>
+                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-300"><i class="fas fa-check text-emergency mr-3"></i> Digital Prep Guide</li>
+                </ul>
+                <button class="w-full py-4 border-2 border-gray-200 dark:border-gray-700 dark:text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">Select Plan</button>
+            </div>
+
+            <div class="relative bg-white dark:bg-gray-800 p-10 rounded-3xl border-2 border-emergency shadow-2xl shadow-red-500/10 scale-105 z-10 flex flex-col h-full">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-emergency text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest">Most Popular</div>
+                <h3 class="text-xl font-bold dark:text-white mb-2">Family Pack</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Full protection for up to 4 family members.</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-black dark:text-white">$</span>
+                    <span class="text-5xl font-black dark:text-white price-value" data-monthly="49" data-yearly="39">49</span>
+                    <span class="text-gray-400 font-bold">/mo</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-grow">
+                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-300 font-bold"><i class="fas fa-check text-emergency mr-3"></i> 4x Delux Survival Kits</li>
+                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-300"><i class="fas fa-check text-emergency mr-3"></i> Advanced Medical Kit</li>
+                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-300"><i class="fas fa-check text-emergency mr-3"></i> 24/7 Priority Support</li>
+                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-300"><i class="fas fa-check text-emergency mr-3"></i> Quarterly Gear Audit</li>
+                </ul>
+                <button class="w-full py-4 bg-emergency text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-red-700 shadow-lg shadow-red-500/30 transition-all active:scale-95">Protect Family</button>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                <h3 class="text-xl font-bold dark:text-white mb-2">Bunker Elite</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mb-6">Maximum security for long-term survival.</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-black dark:text-white">$</span>
+                    <span class="text-5xl font-black dark:text-white price-value" data-monthly="99" data-yearly="79">99</span>
+                    <span class="text-gray-400 font-bold">/mo</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-grow">
+                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-300"><i class="fas fa-check text-emergency mr-3"></i> Unlimited Custom Gear</li>
+                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-300"><i class="fas fa-check text-emergency mr-3"></i> Tactical Training Access</li>
+                    <li class="flex items-center text-sm text-gray-600 dark:text-gray-300"><i class="fas fa-check text-emergency mr-3"></i> Satellite Comm Access</li>
+                </ul>
+                <button class="w-full py-4 border-2 border-gray-200 dark:border-gray-700 dark:text-white rounded-xl font-black uppercase tracking-widest text-xs hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">Go Elite</button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    const pricingBtn = document.getElementById('pricing-toggle');
+    const toggleCircle = document.getElementById('toggle-circle');
+    const priceElements = document.querySelectorAll('.price-value');
+    let isYearly = false;
+
+    pricingBtn.addEventListener('click', () => {
+        isYearly = !isYearly;
+        
+        // Update Toggle Switch Visuals
+        if (isYearly) {
+            toggleCircle.classList.replace('left-1', 'left-8');
+            pricingBtn.classList.replace('bg-emergency', 'bg-gray-900');
+        } else {
+            toggleCircle.classList.replace('left-8', 'left-1');
+            pricingBtn.classList.replace('bg-gray-900', 'bg-emergency');
+        }
+
+        // Animate and Change Prices
+        priceElements.forEach(price => {
+            price.classList.add('opacity-0', '-translate-y-2');
+            
+            setTimeout(() => {
+                price.innerText = isYearly ? price.dataset.yearly : price.dataset.monthly;
+                price.classList.remove('opacity-0', '-translate-y-2');
+                price.classList.add('opacity-100', 'translate-y-0');
+            }, 200);
+        });
+    });
+</script>
+<section class="py-24 bg-white dark:bg-gray-900 transition-colors duration-300 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
+        
+        <div class="flex flex-col items-center text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-black tracking-tighter dark:text-white uppercase mb-4">
+                Trusted by <span class="text-emergency">Survivors</span>
+            </h2>
+            <div class="flex items-center space-x-1 text-yellow-500 mb-4">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <span class="ml-2 text-gray-500 dark:text-gray-400 font-bold text-sm">5.0 Avg Rating</span>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 max-w-2xl">
+                Real stories from families and professionals who put our gear to the ultimate test.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="group relative bg-gray-50 dark:bg-gray-800 p-8 rounded-3xl border border-transparent hover:border-emergency/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                <div class="absolute -top-5 left-8 flex items-center">
+                    <div class="w-12 h-12 rounded-full border-4 border-white dark:border-gray-900 overflow-hidden shadow-lg">
+                        <img src="assets/t1" alt="User" class="w-full h-full object-cover">
+                    </div>
+                    <div class="ml-3 bg-emergency text-white text-[10px] font-black px-2 py-1 rounded-md uppercase tracking-widest shadow-lg">Verified</div>
+                </div>
+                
+                <div class="mt-4">
+                    <i class="fas fa-quote-left text-emergency/20 text-4xl mb-4"></i>
+                    <p class="text-gray-600 dark:text-gray-300 italic leading-relaxed mb-6">
+                        "During the last hurricane, our power was out for 5 days. The SAFEGUARD solar array and medical kit weren't just gear—they were a lifeline for my kids."
+                    </p>
+                    <div>
+                        <h4 class="font-bold dark:text-white">James McAvoy</h4>
+                        <p class="text-xs text-gray-400 uppercase tracking-widest">Family Preparedness Lead</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative bg-gray-50 dark:bg-gray-800 p-8 rounded-3xl border border-transparent hover:border-emergency/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                <div class="absolute -top-5 left-8 flex items-center">
+                    <div class="w-12 h-12 rounded-full border-4 border-white dark:border-gray-900 overflow-hidden shadow-lg">
+                        <img src="assets/t2" alt="User" class="w-full h-full object-cover">
+                    </div>
+                    <div class="ml-3 bg-emergency text-white text-[10px] font-black px-2 py-1 rounded-md uppercase tracking-widest shadow-lg">Verified</div>
+                </div>
+                
+                <div class="mt-4">
+                    <i class="fas fa-quote-left text-emergency/20 text-4xl mb-4"></i>
+                    <p class="text-gray-600 dark:text-gray-300 italic leading-relaxed mb-6">
+                        "As a professional hiker, I've seen a lot of 'survival' tools fail. The build quality here is unmatched. It’s the only kit I trust in the backcountry."
+                    </p>
+                    <div>
+                        <h4 class="font-bold dark:text-white">Sarah Jenkins</h4>
+                        <p class="text-xs text-gray-400 uppercase tracking-widest">Outdoor Expeditionist</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative bg-gray-50 dark:bg-gray-800 p-8 rounded-3xl border border-transparent hover:border-emergency/20 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 lg:col-span-1 md:col-span-2 lg:md:col-span-1">
+                <div class="absolute -top-5 left-8 flex items-center">
+                    <div class="w-12 h-12 rounded-full border-4 border-white dark:border-gray-900 overflow-hidden shadow-lg">
+                        <img src="assets/t3" alt="User" class="w-full h-full object-cover">
+                    </div>
+                    <div class="ml-3 bg-emergency text-white text-[10px] font-black px-2 py-1 rounded-md uppercase tracking-widest shadow-lg">Verified</div>
+                </div>
+                
+                <div class="mt-4">
+                    <i class="fas fa-quote-left text-emergency/20 text-4xl mb-4"></i>
+                    <p class="text-gray-600 dark:text-gray-300 italic leading-relaxed mb-6">
+                        "The educational guides provided more value than I expected. I didn't just buy a bag; I gained the confidence to handle a crisis. Highly recommend."
+                    </p>
+                    <div>
+                        <h4 class="font-bold dark:text-white">David Chen</h4>
+                        <p class="text-xs text-gray-400 uppercase tracking-widest">Urban Survivalist</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+   <section class="py-20 bg-white transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="relative overflow-hidden rounded-[3rem] bg-slate-50 border border-slate-200 p-10 md:p-24 shadow-xl shadow-slate-200/50 text-center">
+            
+            <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-emergency/5 rounded-full blur-[100px] animate-pulse"></div>
+            <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-slate-200/60 rounded-full blur-[80px]"></div>
+
+            <div class="relative z-10 flex flex-col items-center">
+                
+                <div class="inline-flex items-center space-x-2 bg-white border border-slate-200 px-5 py-2 rounded-full mb-10 shadow-sm backdrop-blur-md">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emergency opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emergency"></span>
+                    </span>
+                    <span class="text-slate-900 text-[10px] font-black uppercase tracking-[0.3em]">System Status: Operational</span>
+                </div>
+
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 leading-[0.95] mb-8 max-w-4xl uppercase tracking-tighter italic">
+                    Hope is not a <span class="text-emergency underline decoration-slate-300">Strategy.</span> <br>
+                    Being Prepared is.
+                </h2>
+
+                <p class="text-slate-600 text-base md:text-xl max-w-2xl mb-14 leading-relaxed font-medium">
+                    Don't wait for the siren to start your plan. Join over 50,000+ citizens who have secured their survival infrastructure with SAFEGUARD.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
+                   <a href="contact.html">
+                     <button class="group relative w-full sm:w-80 bg-emergency hover:bg-red-700 text-white py-6 rounded-2xl font-black uppercase tracking-widest text-sm transition-all shadow-2xl shadow-red-500/30 active:scale-95 overflow-hidden">
+                        <span class="relative z-10 flex items-center justify-center">
+                            Get Your Kit Now
+                            <i class="fas fa-bolt ml-3 group-hover:animate-bounce"></i>
+                        </span>
+                        <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+                    </button>
+                   </a>
+                   
+                   <a href="comingsoon.html">
+                    <button class="w-full sm:w-80 bg-slate-900 hover:bg-slate-800 text-white py-6 rounded-2xl font-black uppercase tracking-widest text-sm transition-all shadow-xl shadow-slate-900/10 active:scale-95">
+                        Download Free Guide
+                    </button>
+                   </a>
+                    
+                </div>
+
+                <div class="mt-16 flex flex-wrap justify-center items-center gap-8 opacity-60">
+                    <span class="text-slate-400 text-[10px] font-black uppercase tracking-widest border-r border-slate-200 pr-8 last:border-0">ISO 9001 Certified</span>
+                    <span class="text-slate-400 text-[10px] font-black uppercase tracking-widest border-r border-slate-200 pr-8 last:border-0">GSA Schedule Partner</span>
+                    <span class="text-slate-400 text-[10px] font-black uppercase tracking-widest">Field Tested 2026</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 pt-12 pb-6 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        
+        <div class="space-y-6">
+            <div>
+                <a href="index.html">
+                                    <h3 class="font-bold text-2xl mb-4 text-emergency tracking-tighter">SAFEGUARD</h3>
+
+                </a>
+                <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                    Your number one source for emergency readiness and survival supplies since 2024. Protecting families with grade-A tactical gear.
+                </p>
+            </div>
+            
+            <div class="flex space-x-5">
+                <a href="#" class="group transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fab fa-facebook text-gray-400 group-hover:text-blue-600 text-xl"></i>
+                </a>
+                <a href="#" class="group transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fab fa-twitter text-gray-400 group-hover:text-sky-400 text-xl"></i>
+                </a>
+                <a href="#" class="group transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fab fa-instagram text-gray-400 group-hover:text-pink-500 text-xl"></i>
+                </a>
+                <a href="#" class="group transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fab fa-youtube text-gray-400 group-hover:text-red-600 text-xl"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="lg:pl-8">
+            <h4 class="font-bold mb-6 dark:text-white uppercase text-xs tracking-widest text-gray-900">Quick Links</h4>
+            <ul class="text-sm space-y-3 text-gray-500 dark:text-gray-400">
+                <li><a href="index.html" class="hover:text-emergency hover:pl-2 transition-all duration-200 block">Home</a></li>
+                <li><a href="shop.html" class="hover:text-emergency hover:pl-2 transition-all duration-200 block">Shop </a></li>
+                <li><a href="404.html" class="hover:text-emergency hover:pl-2 transition-all duration-200 block">404 Page</a></li>
+                <li><a href="comingsoon.html" class="hover:text-emergency hover:pl-2 transition-all duration-200 block text-orange-500 font-medium">Coming Soon</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="font-bold mb-6 dark:text-white uppercase text-xs tracking-widest text-gray-900">Support</h4>
+            <ul class="text-sm space-y-3 text-gray-500 dark:text-gray-400">
+                <li><a href="home2.html" class="hover:text-emergency hover:pl-2 transition-all duration-200 block">Home2</a></li>
+                <li><a href="pricing.html" class="hover:text-emergency hover:pl-2 transition-all duration-200 block">Pricing</a></li>
+                <li><a href="contact.html" class="hover:text-emergency hover:pl-2 transition-all duration-200 block">Contact</a></li>
+                <li><a href="gallery.html" class="hover:text-emergency hover:pl-2 transition-all duration-200 block">Gallery</a></li>
+            </ul>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-2xl border border-gray-100 dark:border-gray-800 transition-all hover:shadow-lg">
+            <h4 class="font-bold mb-2 dark:text-white">Newsletter</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4 italic">Get survival tips and gear alerts.</p>
+            <form id="newsletter-form" class="space-y-2">
+                <div class="relative">
+                    <input type="email" required placeholder="Your Email" class="w-full px-4 py-3 text-sm bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 focus:border-emergency focus:ring-1 focus:ring-emergency rounded-xl outline-none transition-all">
+                </div>
+                <button type="submit" class="w-full bg-emergency hover:bg-red-700 text-white text-sm font-bold py-3 rounded-xl transition-all active:scale-95 shadow-lg shadow-red-500/20">
+                    Join the Fleet
+                </button>
+            </form>
+            <p id="success-msg" class="hidden text-[10px] text-green-500 mt-2 font-bold animate-pulse text-center uppercase tracking-wider">Thanks for joining!</p>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center text-[10px] uppercase tracking-[0.2em] text-gray-400 border-t border-gray-100 dark:border-gray-800 pt-8 pb-4">
+            &copy; 2026 SafeGuard Systems. <span class="mx-2">|</span> Built for Absolute Readiness.
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button');
+        const success = document.getElementById('success-msg');
+        
+        btn.innerHTML = '<i class="fas fa-circle-notch animate-spin"></i> Subscribing...';
+        
+        // Mock API Call
+        setTimeout(() => {
+            this.classList.add('hidden');
+            success.classList.remove('hidden');
+        }, 1500);
+    });
+</script>
+
+    <script>
+        const themeBtn = document.getElementById('theme-toggle');
+        const dirBtn = document.getElementById('dir-toggle');
+        const root = document.documentElement;
+
+        // Theme Logic
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            root.classList.add('dark');
+            themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        themeBtn.addEventListener('click', () => {
+            root.classList.toggle('dark');
+            if (root.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+                themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.theme = 'light';
+                themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+
+        // LTR/RTL Logic
+        if (localStorage.dir === 'rtl') {
+            root.dir = 'rtl';
+            dirBtn.innerText = 'RTL';
+        }
+
+        dirBtn.addEventListener('click', () => {
+            if (root.dir === 'rtl') {
+                root.dir = 'ltr';
+                localStorage.dir = 'ltr';
+                dirBtn.innerText = 'LTR';
+            } else {
+                root.dir = 'rtl';
+                localStorage.dir = 'rtl';
+                dirBtn.innerText = 'RTL';
+            }
+        });
+    </script>
+</body>
+</html>

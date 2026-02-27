@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/lifeguard.png">
+    <title>SafeGuard | Disaster Preparedness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        // Tailwind Config for Dark Mode
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        emergency: '#dc2626', // High-visibility red
+                        safety: '#059669',    // Trust green
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+<nav id="main-nav" class="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <a href="index.html" class="flex-shrink-0 font-black text-2xl text-emergency italic tracking-tighter cursor-pointer">
+                SAFEGUARD
+            </a>
+            
+            <div id="desktop-links" class="hidden lg:flex items-center space-x-8 text-sm font-bold uppercase tracking-wide">
+                <a href="index.html" class="nav-link transition-colors hover:text-emergency">Home1</a>
+                <a href="home2.html" class="nav-link transition-colors hover:text-emergency">Home2</a>
+                <a href="about.html" class="nav-link transition-colors hover:text-emergency">About</a>
+                <a href="shop.html" class="nav-link transition-colors hover:text-emergency">Shop</a>
+                <a href="gallery.html" class="nav-link transition-colors hover:text-emergency">Gallery</a>
+                <a href="pricing.html" class="nav-link transition-colors hover:text-emergency">Pricing</a>
+                <a href="contact.html" class="nav-link transition-colors hover:text-emergency">Contact</a>
+            </div>
+
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <div class="hidden sm:flex items-center bg-gray-100 dark:bg-gray-800 rounded-full p-1 border dark:border-gray-700">
+                    <button class="js-theme-toggle w-8 h-8 flex items-center justify-center rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all shadow-sm">
+                        <i class="fas fa-moon text-xs"></i>
+                    </button>
+                    <button class="js-dir-toggle w-10 h-8 flex items-center justify-center rounded-full text-[10px] font-black hover:bg-white dark:hover:bg-gray-700 transition-all">
+                        LTR
+                    </button>
+                </div>
+
+                <a href="login.html" class="hidden md:inline-block bg-emergency text-white px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:bg-red-700 shadow-lg transition-all">
+                    Register
+                </a>
+
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 dark:text-gray-300 focus:outline-none hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                    <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 pt-4 pb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1 mb-6">
+                <a href="index.html" class="nav-link flex items-center px-4 py-4 text-base font-bold border-b border-gray-50 dark:border-gray-800 hover:text-emergency dark:text-white transition-colors">
+                    <i class="fas fa-home w-6 text-sm opacity-50"></i> Home1
+                </a>
+                <a href="home2.html" class="nav-link flex items-center px-4 py-4 text-base font-bold border-b border-gray-50 dark:border-gray-800 hover:text-emergency dark:text-white transition-colors">
+                    <i class="fas fa-door-open w-6 text-sm opacity-50"></i> Home2
+                </a>
+                <a href="about.html" class="nav-link flex items-center px-4 py-4 text-base font-bold border-b border-gray-50 dark:border-gray-800 hover:text-emergency dark:text-white transition-colors">
+                    <i class="fas fa-info-circle w-6 text-sm opacity-50"></i> About
+                </a>
+                <a href="shop.html" class="nav-link flex items-center px-4 py-4 text-base font-bold border-b border-gray-50 dark:border-gray-800 hover:text-emergency dark:text-white transition-colors">
+                    <i class="fas fa-shopping-bag w-6 text-sm opacity-50"></i> Shop
+                </a>
+                <a href="gallery.html" class="nav-link flex items-center px-4 py-4 text-base font-bold border-b border-gray-50 dark:border-gray-800 hover:text-emergency dark:text-white transition-colors">
+                    <i class="fas fa-images w-6 text-sm opacity-50"></i> Gallery
+                </a>
+                <a href="pricing.html" class="nav-link flex items-center px-4 py-4 text-base font-bold border-b border-gray-50 dark:border-gray-800 hover:text-emergency dark:text-white transition-colors">
+                    <i class="fas fa-tags w-6 text-sm opacity-50"></i> Pricing
+                </a>
+                <a href="contact.html" class="nav-link flex items-center px-4 py-4 text-base font-bold border-b md:border-b-0 border-gray-50 dark:border-gray-800 hover:text-emergency dark:text-white transition-colors">
+                    <i class="fas fa-envelope w-6 text-sm opacity-50"></i> Contact
+                </a>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-gray-100 dark:border-gray-800 pt-6">
+                <div class="flex items-center bg-gray-100 dark:bg-gray-800 rounded-full p-1.5 border border-gray-200 dark:border-gray-700 w-full sm:w-auto justify-center">
+                    <button class="js-theme-toggle flex-1 sm:flex-none w-14 h-11 flex items-center justify-center rounded-full bg-white dark:bg-gray-700 shadow-sm transition-all dark:text-white">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="js-dir-toggle flex-1 sm:flex-none px-8 h-11 flex items-center justify-center rounded-full text-[11px] font-black uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                        LTR
+                    </button>
+                </div>
+                <a href="login.html" class="w-full sm:w-auto text-center bg-emergency text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-red-700 shadow-lg transition-all">
+                    Register Now
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const html = document.documentElement;
+        const themeBtns = document.querySelectorAll('.js-theme-toggle');
+        const dirBtns = document.querySelectorAll('.js-dir-toggle');
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        // --- THEME LOGIC ---
+        const setTheme = (isDark) => {
+            if (isDark) {
+                html.classList.add('dark');
+                themeBtns.forEach(btn => btn.innerHTML = '<i class="fas fa-sun text-xs text-yellow-500"></i>');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark');
+                themeBtns.forEach(btn => btn.innerHTML = '<i class="fas fa-moon text-xs"></i>');
+                localStorage.setItem('theme', 'light');
+            }
+        };
+
+        themeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setTheme(!html.classList.contains('dark'));
+            });
+        });
+
+        // --- DIRECTION LOGIC ---
+        const setDir = (dir) => {
+            html.setAttribute('dir', dir);
+            dirBtns.forEach(btn => btn.innerText = dir.toUpperCase());
+            localStorage.setItem('dir', dir);
+        };
+
+        dirBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const currentDir = html.getAttribute('dir') || 'ltr';
+                setDir(currentDir === 'ltr' ? 'rtl' : 'ltr');
+            });
+        });
+
+        // --- ACTIVE LINK LOGIC ---
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('text-emergency');
+                if (link.classList.contains('flex')) {
+                    link.classList.add('bg-red-50', 'dark:bg-red-900/10');
+                }
+            }
+        });
+
+        // --- MOBILE MENU TOGGLE ---
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                menuIcon.className = isHidden ? 'fas fa-bars text-2xl' : 'fas fa-times text-2xl';
+            });
+        }
+
+        // --- INITIALIZE FROM STORAGE ---
+        if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setTheme(true);
+        }
+        if (localStorage.dir) {
+            setDir(localStorage.dir);
+        }
+    });
+</script>
+
+<header class="relative w-full min-h-[85vh] md:min-h-screen flex items-center bg-white dark:bg-gray-950 transition-colors duration-500 overflow-hidden">
+    
+    <div class="absolute inset-0 z-0 opacity-30 dark:opacity-20">
+        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,_#dc2626_0%,_transparent_50%)]"></div>
+        <div class="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,_#dc2626_0%,_transparent_50%)] opacity-30"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 relative z-10 py-20">
+        <div class="flex flex-col items-center text-center space-y-8">
+            
+            <div class="inline-flex items-center space-x-2 bg-slate-100 dark:bg-gray-800 px-5 py-2 rounded-full border border-slate-200 dark:border-gray-700 shadow-sm">
+                <i class="fas fa-fingerprint text-emergency text-xs"></i>
+                <span class="text-[10px] md:text-[11px] font-black uppercase tracking-[0.3em] text-slate-600 dark:text-gray-400">Identity Protocol: 01.01</span>
+            </div>
+
+            <h1 class="text-5xl md:text-8xl lg:text-9xl font-black text-slate-900 dark:text-white leading-none tracking-tighter uppercase italic">
+                Preparing People. <br>
+                <span class="text-emergency">Protecting Lives.</span>
+            </h1>
+
+            <p class="text-slate-500 dark:text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed font-medium">
+                We are dedicated to helping individuals, families, and communities stay prepared for emergencies through <span class="text-slate-900 ">reliable survival gear</span> and practical preparedness education.
+            </p>
+
+            <div class="relative py-4">
+                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                    <div class="w-full border-t border-slate-200 dark:border-gray-800"></div>
+                </div>
+                <div class="relative flex justify-center">
+                    <span class="bg-white dark:bg-gray-950 px-6 text-sm font-black uppercase tracking-widest text-emergency italic">Our Mission is Simple</span>
+                </div>
+            </div>
+
+            <p class="text-3xl md:text-5xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">
+                Make safety accessible <br class="hidden md:block"> to everyone.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl mt-12">
+                <div class="group p-8 bg-slate-50 dark:bg-gray-900 rounded-[2.5rem] border border-slate-200 dark:border-gray-800 hover:border-emergency transition-all duration-500">
+                    <p class="text-4xl font-black text-slate-200 dark:text-gray-800 mb-4 group-hover:text-emergency/20 transition-colors">01</p>
+                    <h4 class="text-sm font-black uppercase tracking-widest mb-2">Reliability</h4>
+                    <p class="text-xs text-slate-500 dark:text-gray-400 font-medium">Field-tested gear that never fails when the siren sounds.</p>
+                </div>
+                <div class="group p-8 bg-slate-50 dark:bg-gray-800 rounded-[2.5rem] border border-slate-200 dark:border-gray-800 hover:border-emergency transition-all duration-500">
+                    <p class="text-4xl font-black text-slate-200 dark:text-gray-800 mb-4 group-hover:text-emergency/20 transition-colors">02</p>
+                    <h4 class="text-sm font-black uppercase tracking-widest mb-2">Education</h4>
+                    <p class="text-xs text-slate-500 dark:text-gray-400 font-medium">Empowering minds with practical survival knowledge for any scenario.</p>
+                </div>
+                <div class="group p-8 bg-slate-50 dark:bg-gray-800 rounded-[2.5rem] border border-slate-200 dark:border-gray-800 hover:border-emergency transition-all duration-500">
+                    <p class="text-4xl font-black text-slate-200 dark:text-gray-800 mb-4 group-hover:text-emergency/20 transition-colors">03</p>
+                    <h4 class="text-sm font-black uppercase tracking-widest mb-2">Community</h4>
+                    <p class="text-xs text-slate-500 dark:text-gray-400 font-medium">Building a network of prepared citizens to protect the legacy.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<section class="py-24 bg-white dark:bg-gray-950 transition-colors duration-500 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="space-y-8">
+               <div class="flex flex-col items-center text-center space-y-8">
+    
+    <div class="inline-flex items-center space-x-2 bg-emergency/10 border border-emergency/20 px-4 py-2 rounded-full">
+        <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emergency opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emergency"></span>
+        </span>
+        <span class="text-emergency text-[10px] font-black uppercase tracking-[0.3em]">Core Directive</span>
+    </div>
+
+    <h2 class="text-5xl md:text-7xl font-black text-slate-900 dark:text-white uppercase italic tracking-tighter leading-none">
+        Our <br> <span class="text-emergency">Mission</span>
+    </h2>
+
+</div>
+                <p class="text-slate-600 dark:text-gray-400 text-xl md:text-2xl leading-relaxed font-medium border-l-4 border-slate-100 dark:border-gray-800 pl-8">
+                    To empower people with <span class="text-slate-900 dark:text-white font-bold">trusted disaster preparedness solutions</span> by combining high-quality survival equipment with easy-to-understand educational resources that promote readiness before emergencies happen.
+                </p>
+
+                <div class="pt-4">
+                    <button class="group flex items-center space-x-4 text-slate-900 dark:text-white font-black uppercase tracking-widest text-xs hover:text-emergency transition-colors">
+                        <span class="w-12 h-12 rounded-full border border-slate-200 dark:border-gray-700 flex items-center justify-center group-hover:border-emergency transition-all">
+                            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                        <span>Learn Our History</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                
+                <div class="group p-8 bg-slate-50 dark:bg-gray-900 rounded-[2.5rem] border border-slate-100 dark:border-gray-800 hover:shadow-2xl hover:-translate-y-2 transition-all">
+                    <div class="w-12 h-12 bg-white dark:bg-gray-800 rounded-2xl flex items-center justify-center shadow-sm mb-6 group-hover:bg-emergency group-hover:text-white transition-colors">
+                        <i class="fas fa-tools text-lg"></i>
+                    </div>
+                    <h4 class="text-sm font-black uppercase tracking-widest text-slate-900 dark:text-white mb-2">High-Quality Gear</h4>
+                    <p class="text-xs text-slate-500 dark:text-gray-400 leading-relaxed">Sourcing only field-tested equipment built for extreme conditions.</p>
+                </div>
+
+                <div class="group p-8 bg-slate-900 rounded-[2.5rem] border border-slate-800 hover:shadow-2xl hover:-translate-y-2 transition-all shadow-xl sm:translate-y-8">
+                    <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:bg-emergency transition-colors">
+                        <i class="fas fa-book-open text-lg"></i>
+                    </div>
+                    <h4 class="text-sm font-black uppercase tracking-widest text-white mb-2">Education First</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Simplifying complex survival data into actionable, easy guides.</p>
+                </div>
+
+                <div class="group p-8 bg-slate-50 dark:bg-gray-900 rounded-[2.5rem] border border-slate-100 dark:border-gray-800 hover:shadow-2xl hover:-translate-y-2 transition-all">
+                    <div class="w-12 h-12 bg-white dark:bg-gray-800 rounded-2xl flex items-center justify-center shadow-sm mb-6 group-hover:bg-emergency group-hover:text-white transition-colors">
+                        <i class="fas fa-users text-lg"></i>
+                    </div>
+                    <h4 class="text-sm font-black uppercase tracking-widest text-slate-900 dark:text-white mb-2">Global Empowerment</h4>
+                    <h4 class="text-xs text-slate-500 dark:text-gray-400 leading-relaxed">Ensuring every citizen has the tools to protect their family.</h4>
+                </div>
+
+                <div class="group p-8 bg-slate-50 dark:bg-gray-900 rounded-[2.5rem] border border-slate-100 dark:border-gray-800 hover:shadow-2xl hover:-translate-y-2 transition-all sm:translate-y-8">
+                    <div class="w-12 h-12 bg-white dark:bg-gray-800 rounded-2xl flex items-center justify-center shadow-sm mb-6 group-hover:bg-emergency group-hover:text-white transition-colors">
+                        <i class="fas fa-clock text-lg"></i>
+                    </div>
+                    <h4 class="text-sm font-black uppercase tracking-widest text-slate-900 dark:text-white mb-2">Proactive Readiness</h4>
+                    <p class="text-xs text-slate-500 dark:text-gray-400 leading-relaxed">Focusing on preparation today to prevent disaster tomorrow.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="relative py-28 bg-white dark:bg-gray-950 transition-colors duration-500 overflow-hidden">
+    
+    <div class="absolute inset-0 z-0">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emergency/5 rounded-full blur-[120px] animate-pulse"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-[100px]"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+        <div class="flex flex-col items-center text-center">
+            
+            <div class="inline-flex items-center space-x-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-5 py-2 rounded-full mb-8 shadow-xl">
+                <i class="fas fa-eye text-[10px]"></i>
+                <span class="text-[10px] font-black uppercase tracking-[0.4em]">Future Protocol</span>
+            </div>
+
+            <h2 class="text-5xl md:text-8xl font-black text-slate-900 dark:text-white uppercase italic tracking-tighter leading-none mb-10">
+                Our <span class="text-emergency">Vision</span>
+            </h2>
+
+            <div class="flex flex-col items-center justify-center w-full">
+    <p class="text-2xl md:text-5xl font-black text-slate-900 dark:text-white max-w-5xl leading-[1.1] tracking-tighter uppercase mb-16 text-center mx-auto">
+        A world where <span class="text-emergency italic">every household</span> is prepared, informed, and <span class="underline decoration-slate-200 dark:decoration-gray-800 decoration-4">confident</span> in facing unexpected disasters.
+    </p>
+</div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+                
+                <div class="group relative p-8 bg-white/50 dark:bg-gray-900/50 backdrop-blur-md rounded-[2.5rem] border border-slate-200 dark:border-gray-800 hover:border-emergency transition-all duration-500 hover:-translate-y-2">
+                    <div class="text-slate-200 dark:text-gray-800 text-6xl font-black absolute top-4 right-8 group-hover:text-emergency/10 transition-colors italic">01</div>
+                    <div class="relative z-10 text-left">
+                        <h4 class="text-sm font-black uppercase tracking-widest text-slate-900 dark:text-white mb-3">Prepared</h4>
+                        <p class="text-xs text-slate-500 dark:text-gray-400 leading-relaxed">Eliminating panic through accessible gear and strategic stockpiling infrastructure.</p>
+                    </div>
+                </div>
+
+                <div class="group relative p-8 bg-white/50 dark:bg-gray-900/50 backdrop-blur-md rounded-[2.5rem] border border-slate-200 dark:border-gray-800 hover:border-emergency transition-all duration-500 hover:-translate-y-2">
+                    <div class="text-slate-200 dark:text-gray-800 text-6xl font-black absolute top-4 right-8 group-hover:text-emergency/10 transition-colors italic">02</div>
+                    <div class="relative z-10 text-left">
+                        <h4 class="text-sm font-black uppercase tracking-widest text-slate-900 dark:text-white mb-3">Informed</h4>
+                        <p class="text-xs text-slate-500 dark:text-gray-400 leading-relaxed">Global literacy in disaster response, water purification, and signal communication.</p>
+                    </div>
+                </div>
+
+                <div class="group relative p-8 bg-white/50 dark:bg-gray-900/50 backdrop-blur-md rounded-[2.5rem] border border-slate-200 dark:border-gray-800 hover:border-emergency transition-all duration-500 hover:-translate-y-2">
+                    <div class="text-slate-200 dark:text-gray-800 text-6xl font-black absolute top-4 right-8 group-hover:text-emergency/10 transition-colors italic">03</div>
+                    <div class="relative z-10 text-left">
+                        <h4 class="text-sm font-black uppercase tracking-widest text-slate-900 dark:text-white mb-3">Confident</h4>
+                        <p class="text-xs text-slate-500 dark:text-gray-400 leading-relaxed">Replacing fear with the quiet assurance that comes from professional-grade readiness.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-20 w-32 h-1.5 bg-emergency rounded-full animate-pulse"></div>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-slate-50 dark:bg-gray-950 transition-colors duration-500 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-8">
+                <div class="flex flex-col items-center text-center lg:items-start lg:text-left space-y-8">
+    
+    <div class="inline-flex items-center space-x-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-4 py-2 rounded-lg">
+        <span class="text-[10px] font-black uppercase tracking-[0.3em]">Genesis Report</span>
+    </div>
+
+    <h2 class="text-5xl md:text-7xl font-black text-slate-900 dark:text-white uppercase italic tracking-tighter leading-none">
+        Why We <br> <span class="text-emergency">Started</span>
+    </h2>
+
+</div>
+
+                <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
+    
+    <div class="relative w-full">
+        <p class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white uppercase leading-tight italic max-w-2xl mx-auto lg:mx-0">
+            "Natural disasters strike without warning. Awareness isn't enough—you need <span class="text-emergency">infrastructure.</span>"
+        </p>
+        
+        <p class="mt-8 text-slate-500 dark:text-gray-400 text-lg md:text-xl leading-relaxed font-medium max-w-xl mx-auto lg:mx-0">
+            We created this platform to bridge the gap between awareness and action — offering both the tools and the knowledge people need to stay safe.
+        </p>
+    </div>
+
+    <div class="flex items-center justify-center lg:justify-start space-x-8 pt-10 w-full">
+        <div class="flex flex-col">
+            <span class="text-3xl font-black text-slate-900 dark:text-white tracking-tighter">2026</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-emergency">Protocol Deployed</span>
+        </div>
+        
+        <div class="h-12 w-px bg-slate-200 dark:bg-gray-800"></div>
+        
+        <div class="flex flex-col">
+            <span class="text-3xl font-black text-slate-900 dark:text-white tracking-tighter">50K+</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-emergency">Units Secured</span>
+        </div>
+    </div>
+</div>
+            </div>
+
+            <div class="lg:col-span-5 relative group">
+                <div class="relative rounded-[3rem] overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl transition-transform duration-700 group-hover:-rotate-2">
+                    <img src="assets/floods" class="w-full h-[500px] object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-tr from-emergency/80 to-transparent flex flex-col justify-end p-10">
+                        <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-2xl">
+                            <h4 class="text-white font-black uppercase tracking-widest text-xs mb-2">Our Motivation</h4>
+                            <p class="text-white/80 text-sm font-medium leading-relaxed">
+                                Watching communities struggle during the 2024 floods was our tipping point. We moved from "talking" to "building."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-emergency rounded-full blur-3xl opacity-20 animate-pulse"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- <section class="py-24 bg-white dark:bg-gray-950 transition-colors duration-500 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
+        
+        <div class="mb-16 text-center">
+            <h3 class="text-emergency font-black uppercase tracking-[0.4em] text-xs mb-4">Service Protocol</h3>
+            <h2 class="text-5xl md:text-7xl font-black text-slate-900 dark:text-white uppercase italic tracking-tighter">
+                What We <span class="text-emergency">Offer</span>
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            
+            <div class="group relative overflow-hidden rounded-[2.5rem] bg-slate-900 aspect-square md:aspect-auto lg:h-[400px]">
+                <img src="assets/Tactical Backpack" 
+                     alt="Tactical Gear" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-check-circle text-emergency text-xl"></i>
+                        <h4 class="text-xl font-black text-white uppercase italic tracking-tighter">Certified Survival Gear</h4>
+                    </div>
+                    <p class="text-slate-400 text-sm font-medium max-h-0 opacity-0 group-hover:max-h-20 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
+                        Industrial-grade tools, filtration systems, and communication gear tested for 2026 conditions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-[2.5rem] bg-slate-100 dark:bg-gray-900 aspect-square md:aspect-auto">
+                <img src="assets/Ultimate Survival Kit" 
+                     alt="Survival Kits" class="absolute inset-0 w-full h-full object-cover opacity-20 dark:opacity-40 transition-transform duration-700 group-hover:rotate-2 group-hover:scale-110">
+                <div class="absolute inset-0 p-8 flex flex-col justify-between">
+                    <i class="fas fa-box-heart text-3xl text-emergency self-end"></i>
+                    <div>
+                        <div class="flex items-center space-x-3 mb-2">
+                            <i class="fas fa-check-circle text-emergency text-sm"></i>
+                            <h4 class="text-xl font-black text-slate-900 dark:text-white uppercase italic">Preparedness Kits</h4>
+                        </div>
+                        <p class="text-slate-500 dark:text-gray-400 text-xs font-bold uppercase tracking-widest">72-Hour Response Ready</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-[2.5rem] bg-emergency aspect-square md:aspect-auto">
+                <div class="absolute inset-0 p-8 flex flex-col justify-between text-white">
+                    <div class="space-y-4">
+                        <i class="fas fa-users-ray text-4xl"></i>
+                        <h4 class="text-2xl font-black uppercase italic tracking-tighter leading-none">Family Safety <br> Planning</h4>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="text-xs font-bold uppercase tracking-widest opacity-80">✔️ Custom Evacuation Maps</p>
+                        <p class="text-xs font-bold uppercase tracking-widest opacity-80">✔️ Communication Protocols</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-[2.5rem] bg-slate-900 md:col-span-2 h-[300px]">
+                <img src="assets/abt img" 
+                     alt="Education" class="absolute inset-0 w-full h-full object-cover opacity-30 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-50">
+                <div class="absolute inset-0 p-10 flex flex-col justify-center">
+                    <h4 class="text-3xl md:text-5xl font-black text-white uppercase italic tracking-tighter mb-4">
+                        Guides & <span class="text-emergency">Tutorials</span>
+                    </h4>
+                    <p class="text-slate-400 max-w-md text-sm md:text-base mb-6">
+                        Bridging the gap between gear and knowledge with simplified survival training modules.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-white text-[10px] font-black uppercase tracking-[0.3em] hover:text-emergency transition-colors">
+                        Access Learning Portal <i class="fas fa-arrow-right ml-3"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-[2.5rem] bg-slate-50 dark:bg-gray-800 border-2 border-dashed border-slate-200 dark:border-gray-700 hover:border-emergency transition-all h-[300px]">
+                <div class="absolute inset-0 p-8 flex flex-col items-center justify-center text-center">
+                    <div class="w-16 h-16 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center shadow-lg mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-user-shield text-emergency text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-black text-slate-900 dark:text-white uppercase italic mb-2">Expert Recommendations</h4>
+                    <p class="text-xs text-slate-500 dark:text-gray-400 leading-relaxed max-w-[200px]">Curated gear lists by former field response professionals.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section> -->
+<section class="py-24 bg-white dark:bg-gray-950 transition-colors duration-500 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
+        
+        <div class="mb-16 text-center">
+            <h3 class="text-emergency font-black uppercase tracking-[0.4em] text-xs mb-4">Service Protocol</h3>
+            <h2 class="text-5xl md:text-7xl font-black text-slate-900 dark:text-white uppercase italic tracking-tighter">
+                What We <span class="text-emergency">Offer</span>
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            
+            <div class="group relative overflow-hidden rounded-[2.5rem] bg-slate-900 h-[350px] md:h-[400px]">
+                <img src="assets/Tactical Backpack" 
+                     alt="Tactical Gear" class="absolute inset-0 w-full h-full object-cover opacity-50 transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+                <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-check-circle text-emergency text-xl"></i>
+                        <h4 class="text-xl font-black text-white uppercase italic tracking-tighter">Certified Survival Gear</h4>
+                    </div>
+                    <p class="text-slate-400 text-sm font-medium max-h-0 opacity-0 group-hover:max-h-20 group-hover:opacity-100 transition-all duration-500 overflow-hidden">
+                        Industrial-grade tools, filtration systems, and communication gear tested for 2026 conditions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-[2.5rem] bg-slate-100 dark:bg-gray-900 h-[350px] md:h-[400px]">
+                <img src="assets/Ultimate Survival Kit" 
+                     alt="Survival Kits" class="absolute inset-0 w-full h-full object-cover opacity-20 dark:opacity-40 transition-transform duration-700 group-hover:rotate-2 group-hover:scale-110">
+                <div class="absolute inset-0 p-8 flex flex-col justify-between">
+                    <i class="fas fa-box-heart text-3xl text-emergency self-end"></i>
+                    <div>
+                        <div class="flex items-center space-x-3 mb-2">
+                            <i class="fas fa-check-circle text-emergency text-sm"></i>
+                            <h4 class="text-xl font-black text-slate-900 dark:text-white uppercase italic">Preparedness Kits</h4>
+                        </div>
+                        <p class="text-slate-500 dark:text-gray-400 text-xs font-bold uppercase tracking-widest">72-Hour Response Ready</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-[2.5rem] bg-emergency h-[350px] md:h-[400px] md:col-span-2 lg:col-span-1">
+                <div class="absolute inset-0 p-8 flex flex-col justify-between text-white">
+                    <div class="space-y-4">
+                        <i class="fas fa-users-ray text-4xl"></i>
+                        <h4 class="text-2xl font-black uppercase italic tracking-tighter leading-none">Family Safety <br> Planning</h4>
+                    </div>
+                    <div class="space-y-3">
+                        <p class="text-xs font-bold uppercase tracking-widest opacity-90 flex items-center">
+                            <span class="mr-2">✔️</span> Custom Evacuation Maps
+                        </p>
+                        <p class="text-xs font-bold uppercase tracking-widest opacity-90 flex items-center">
+                            <span class="mr-2">✔️</span> Communication Protocols
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-[2.5rem] bg-slate-900 md:col-span-2 h-[300px] md:h-[350px]">
+                <img src="assets/abt img" 
+                     alt="Education" class="absolute inset-0 w-full h-full object-cover opacity-30 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-50">
+                <div class="absolute inset-0 p-8 md:p-12 flex flex-col justify-center">
+                    <h4 class="text-3xl md:text-5xl font-black text-white uppercase italic tracking-tighter mb-4">
+                        Guides & <span class="text-emergency">Tutorials</span>
+                    </h4>
+                    <p class="text-slate-400 max-w-md text-sm md:text-base mb-6">
+                        Bridging the gap between gear and knowledge with simplified survival training modules.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-white text-[10px] font-black uppercase tracking-[0.3em] hover:text-emergency transition-colors">
+                        Access Learning Portal <i class="fas fa-arrow-right ml-3"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-[2.5rem] bg-slate-50 dark:bg-gray-800 border-2 border-dashed border-slate-200 dark:border-gray-700 hover:border-emergency transition-all h-[300px] md:h-[350px] md:col-span-2 lg:col-span-1">
+                <div class="absolute inset-0 p-8 flex flex-col items-center justify-center text-center">
+                    <div class="w-16 h-16 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center shadow-lg mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-user-shield text-emergency text-2xl"></i>
+                    </div>
+                    <h4 class="text-lg font-black text-slate-900 dark:text-white uppercase italic mb-2">Expert Recommendations</h4>
+                    <p class="text-xs text-slate-500 dark:text-gray-400 leading-relaxed max-w-[200px]">Curated gear lists by former field response professionals.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="py-24 bg-slate-50 dark:bg-gray-950 transition-colors duration-500 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="space-y-8 order-2 lg:order-1">
+                <div class="flex flex-col items-center text-center lg:items-start lg:text-left space-y-8">
+    
+    <div class="inline-flex items-center space-x-2 bg-white dark:bg-gray-800 px-4 py-2 rounded-full border border-slate-200 dark:border-gray-700 shadow-sm">
+        <i class="fas fa-star text-emergency text-[10px] animate-pulse"></i>
+        <span class="text-slate-900 dark:text-white text-[10px] font-black uppercase tracking-[0.3em]">Unique Methodology</span>
+    </div>
+
+    <h2 class="text-5xl md:text-7xl font-black text-slate-900 dark:text-white uppercase italic tracking-tighter leading-[0.9]">
+        More Than <br> <span class="text-emergency">A Store.</span>
+    </h2>
+
+</div>
+
+                <p class="text-slate-600 dark:text-gray-400 text-xl md:text-2xl leading-relaxed font-medium">
+                    We believe preparedness starts with knowledge. Our platform <span class="text-slate-900 ">bridges the gap</span> between e-commerce and education.
+                </p>
+
+                <p class="text-slate-500 dark:text-gray-400 text-base leading-relaxed max-w-xl">
+                    Don't just buy gear—master it. We help you build survival skills alongside your equipment collection, ensuring you're as ready as your tools are.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                    <div class="group p-6 bg-white dark:bg-gray-900 rounded-2xl border border-slate-200 dark:border-gray-800 hover:border-emergency transition-all cursor-default">
+                        <i class="fas fa-graduation-cap text-emergency mb-3 block text-xl"></i>
+                        <h4 class="text-xs font-black uppercase tracking-widest text-slate-900 dark:text-white">Knowledge Hub</h4>
+                        <p class="text-[10px] text-slate-500 mt-2">Access survival training modules for every purchase.</p>
+                    </div>
+                    <div class="group p-6 bg-white dark:bg-gray-900 rounded-2xl border border-slate-200 dark:border-gray-800 hover:border-emergency transition-all cursor-default">
+                        <i class="fas fa-cart-shopping text-emergency mb-3 block text-xl"></i>
+                        <h4 class="text-xs font-black uppercase tracking-widest text-slate-900 dark:text-white">Curated Gear</h4>
+                        <p class="text-[10px] text-slate-500 mt-2">Equipment selected by field experts, not algorithms.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative group order-1 lg:order-2">
+                <div class="absolute inset-0 bg-emergency/10 rounded-[4rem] blur-[100px] animate-pulse"></div>
+                
+                <div class="relative rounded-[3rem] md:rounded-[4rem] overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl transition-transform duration-700 group-hover:rotate-1">
+                    <img src="assets/abt img1" 
+                         alt="Training" 
+                         class="w-full h-[500px] md:h-[650px] object-cover">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent flex flex-col justify-end p-8 md:p-12">
+                        <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-[2rem] text-white">
+                            <div class="flex items-center justify-between mb-6">
+                                <span class="text-[9px] font-black uppercase tracking-widest bg-emergency px-3 py-1 rounded-full">Protocol Active</span>
+                                <i class="fas fa-book-open text-xs opacity-60"></i>
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-black italic uppercase tracking-tighter leading-none mb-4">Master Your Environment</h3>
+                            <p class="text-sm text-white/70 leading-relaxed font-medium mb-6">
+                                Every piece of infrastructure we sell comes with a "Field Manual" video series to ensure 100% operational proficiency.
+                            </p>
+                            <button class="w-full py-4 border border-white/30 rounded-xl font-black uppercase tracking-widest text-[10px] hover:bg-white hover:text-slate-900 transition-all">
+                                Explore Manuals
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-white dark:bg-gray-950 transition-colors duration-500 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div class="space-y-4">
+                <h3 class="text-emergency font-black uppercase tracking-[0.4em] text-xs">Personnel Protocol</h3>
+                <h2 class="text-5xl md:text-7xl font-black text-slate-900 dark:text-white uppercase italic tracking-tighter leading-none">
+                    The <span class="text-emergency">Advisors.</span>
+                </h2>
+            </div>
+            <p class="text-slate-500 dark:text-gray-400 max-w-sm text-sm font-medium border-l-2 border-slate-200 dark:border-gray-800 pl-6">
+                Our operations are guided by field veterans, engineers, and disaster response planners dedicated to your safety.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            
+            <div class="group relative bg-slate-50 dark:bg-gray-900 rounded-[2.5rem] p-4 border border-slate-200 dark:border-gray-800 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                <div class="relative aspect-[3/4] rounded-[2rem] overflow-hidden mb-6">
+                    <img src="assets/te1" alt="Safety Advisor" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                </div>
+                <div class="px-2 pb-4">
+                    <h4 class="text-[10px] font-black uppercase tracking-widest text-emergency mb-1">Safety Advisor</h4>
+                    <p class="text-xl font-black text-slate-900 dark:text-white uppercase italic tracking-tighter">Marcus Thorne</p>
+                    <div class="mt-4 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <span class="text-[8px] font-bold bg-slate-200 dark:bg-gray-800 px-2 py-1 rounded-md uppercase">OSHA Certified</span>
+                        <span class="text-[8px] font-bold bg-slate-200 dark:bg-gray-800 px-2 py-1 rounded-md uppercase">Risk Audit</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative bg-slate-50 dark:bg-gray-900 rounded-[2.5rem] p-4 border border-slate-200 dark:border-gray-800 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                <div class="relative aspect-[3/4] rounded-[2rem] overflow-hidden mb-6">
+                    <img src="assets/t1" alt="Survival Expert" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                </div>
+                <div class="px-2 pb-4">
+                    <h4 class="text-[10px] font-black uppercase tracking-widest text-emergency mb-1">Survival Specialist</h4>
+                    <p class="text-xl font-black text-slate-900 dark:text-white uppercase italic tracking-tighter">Sarah Vane</p>
+                    <div class="mt-4 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <span class="text-[8px] font-bold bg-slate-200 dark:bg-gray-800 px-2 py-1 rounded-md uppercase">Off-Grid</span>
+                        <span class="text-[8px] font-bold bg-slate-200 dark:bg-gray-800 px-2 py-1 rounded-md uppercase">Bushcraft</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative bg-slate-50 dark:bg-gray-900 rounded-[2.5rem] p-4 border border-slate-200 dark:border-gray-800 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                <div class="relative aspect-[3/4] rounded-[2rem] overflow-hidden mb-6">
+                    <img src="assets/te2" alt="Emergency Planner" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                </div>
+                <div class="px-2 pb-4">
+                    <h4 class="text-[10px] font-black uppercase tracking-widest text-emergency mb-1">Strategic Planner</h4>
+                    <p class="text-xl font-black text-slate-900 dark:text-white uppercase italic tracking-tighter">Elena Rossi</p>
+                    <div class="mt-4 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <span class="text-[8px] font-bold bg-slate-200 dark:bg-gray-800 px-2 py-1 rounded-md uppercase">Logistics</span>
+                        <span class="text-[8px] font-bold bg-slate-200 dark:bg-gray-800 px-2 py-1 rounded-md uppercase">Gov Liaison</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative bg-slate-50 dark:bg-gray-900 rounded-[2.5rem] p-4 border border-slate-200 dark:border-gray-800 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                <div class="relative aspect-[3/4] rounded-[2rem] overflow-hidden mb-6">
+                    <img src="assets/te3" alt="Tech Team" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-60"></div>
+                </div>
+                <div class="px-2 pb-4">
+                    <h4 class="text-[10px] font-black uppercase tracking-widest text-emergency mb-1">Tech Architect</h4>
+                    <p class="text-xl font-black text-slate-900 dark:text-white uppercase italic tracking-tighter">Jaxson Wu</p>
+                    <div class="mt-4 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <span class="text-[8px] font-bold bg-slate-200 dark:bg-gray-800 px-2 py-1 rounded-md uppercase">AI Response</span>
+                        <span class="text-[8px] font-bold bg-slate-200 dark:bg-gray-800 px-2 py-1 rounded-md uppercase">Sensors</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="py-24 bg-white dark:bg-gray-950 transition-colors duration-500 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="relative rounded-[3rem] bg-slate-900 overflow-hidden p-8 md:p-20 text-center shadow-2xl">
+            
+            <!-- <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1504333638930-c8787321eee0?q=80&w=1200" 
+                     class="w-full h-full object-cover opacity-30 grayscale hover:grayscale-0 transition-all duration-1000" 
+                     alt="Mission Readiness">
+                <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/50 to-slate-950"></div>
+            </div> -->
+
+            <div class="relative z-10 flex flex-col items-center">
+                
+                <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full mb-10">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emergency opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emergency"></span>
+                    </span>
+                    <span class="text-white text-[10px] font-black uppercase tracking-[0.3em]">Enrolling Citizens for 2026</span>
+                </div>
+
+                <h2 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[0.95] mb-8 max-w-4xl uppercase italic tracking-tighter">
+                    Don’t Leave Your <br> Safety to <span class="text-emergency">Chance.</span>
+                </h2>
+
+                <p class="text-slate-400 text-base md:text-xl max-w-2xl mb-14 leading-relaxed font-medium">
+                    Behind every success story in our gallery is a plan that started today. Join the SAFEGUARD network and start building your infrastructure of resilience.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
+                    <a href="login.html">
+                        <button class="group relative w-full sm:w-80 bg-emergency hover:bg-red-700 text-white py-6 rounded-2xl font-black uppercase tracking-widest text-xs transition-all shadow-2xl shadow-red-500/30 active:scale-95 overflow-hidden">
+                        <span class="relative z-10 flex items-center justify-center">
+                            Join the Waitlist
+                            <i class="fas fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform"></i>
+                        </span>
+                        <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                    </button>
+                    </a>
+                    
+                    <a href="comingsoon.html">
+                         <button class="w-full sm:w-80 bg-white/5 backdrop-blur-md text-white border border-white/20 py-6 rounded-2xl font-black uppercase tracking-widest text-xs transition-all hover:bg-white/10 active:scale-95">
+                        Download Mission Brief
+                    </button>
+                    </a>
+                   
+                </div>
+
+                <div class="mt-16 flex flex-wrap justify-center items-center gap-8 opacity-40">
+                    <span class="text-white text-[9px] font-black uppercase tracking-widest border-r border-white/20 pr-8 last:border-0">Tier 1 Equipment</span>
+                    <span class="text-white text-[9px] font-black uppercase tracking-widest border-r border-white/20 pr-8 last:border-0">Expert-Led Education</span>
+                    <span class="text-white text-[9px] font-black uppercase tracking-widest">Global Preparedness Network</span>
+                </div>
+            </div>
+
+            <div class="absolute bottom-0 right-0 w-64 h-64 bg-emergency/10 rounded-full blur-[100px] -z-10 animate-pulse"></div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+    <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 pt-12 pb-6 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        
+        <div class="space-y-6">
+            <div>
+                <a href="index.html">
+                                    <h3 class="font-bold text-2xl mb-4 text-emergency tracking-tighter">SAFEGUARD</h3>
+
+                </a>
+                <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                    Your number one source for emergency readiness and survival supplies since 2024. Protecting families with grade-A tactical gear.
+                </p>
+            </div>
+            
+            <div class="flex space-x-5">
+                <a href="#" class="group transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fab fa-facebook text-gray-400 group-hover:text-blue-600 text-xl"></i>
+                </a>
+                <a href="#" class="group transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fab fa-twitter text-gray-400 group-hover:text-sky-400 text-xl"></i>
+                </a>
+                <a href="#" class="group transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fab fa-instagram text-gray-400 group-hover:text-pink-500 text-xl"></i>
+                </a>
+                <a href="#" class="group transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fab fa-youtube text-gray-400 group-hover:text-red-600 text-xl"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="lg:pl-8">
+            <h4 class="font-bold mb-6 dark:text-white uppercase text-xs tracking-widest text-gray-900">Quick Links</h4>
+            <ul class="text-sm space-y-3 text-gray-500 dark:text-gray-400">
+                <li><a href="index.html" class="hover:text-emergency hover:pl-2 transition-all duration-200 block">Home</a></li>
+                <li><a href="shop.html" class="hover:text-emergency hover:pl-2 transition-all duration-200 block">Shop </a></li>
+                <li><a href="404.html" class="hover:text-emergency hover:pl-2 transition-all duration-200 block">404 Page</a></li>
+                <li><a href="comingsoon.html" class="hover:text-emergency hover:pl-2 transition-all duration-200 block text-orange-500 font-medium">Coming Soon</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="font-bold mb-6 dark:text-white uppercase text-xs tracking-widest text-gray-900">Support</h4>
+            <ul class="text-sm space-y-3 text-gray-500 dark:text-gray-400">
+                <li><a href="home2.html" class="hover:text-emergency hover:pl-2 transition-all duration-200 block">Home2</a></li>
+                <li><a href="pricing.html" class="hover:text-emergency hover:pl-2 transition-all duration-200 block">Pricing</a></li>
+                <li><a href="contact.html" class="hover:text-emergency hover:pl-2 transition-all duration-200 block">Contact</a></li>
+                <li><a href="gallery.html" class="hover:text-emergency hover:pl-2 transition-all duration-200 block">Gallery</a></li>
+            </ul>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-2xl border border-gray-100 dark:border-gray-800 transition-all hover:shadow-lg">
+            <h4 class="font-bold mb-2 dark:text-white">Newsletter</h4>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-4 italic">Get survival tips and gear alerts.</p>
+            <form id="newsletter-form" class="space-y-2">
+                <div class="relative">
+                    <input type="email" required placeholder="Your Email" class="w-full px-4 py-3 text-sm bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 focus:border-emergency focus:ring-1 focus:ring-emergency rounded-xl outline-none transition-all">
+                </div>
+                <button type="submit" class="w-full bg-emergency hover:bg-red-700 text-white text-sm font-bold py-3 rounded-xl transition-all active:scale-95 shadow-lg shadow-red-500/20">
+                    Join the Fleet
+                </button>
+            </form>
+            <p id="success-msg" class="hidden text-[10px] text-green-500 mt-2 font-bold animate-pulse text-center uppercase tracking-wider">Thanks for joining!</p>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center text-[10px] uppercase tracking-[0.2em] text-gray-400 border-t border-gray-100 dark:border-gray-800 pt-8 pb-4">
+            &copy; 2026 SafeGuard Systems. <span class="mx-2">|</span> Built for Absolute Readiness.
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button');
+        const success = document.getElementById('success-msg');
+        
+        btn.innerHTML = '<i class="fas fa-circle-notch animate-spin"></i> Subscribing...';
+        
+        // Mock API Call
+        setTimeout(() => {
+            this.classList.add('hidden');
+            success.classList.remove('hidden');
+        }, 1500);
+    });
+</script>
+
+    <script>
+        const themeBtn = document.getElementById('theme-toggle');
+        const dirBtn = document.getElementById('dir-toggle');
+        const root = document.documentElement;
+
+        // Theme Logic
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            root.classList.add('dark');
+            themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        themeBtn.addEventListener('click', () => {
+            root.classList.toggle('dark');
+            if (root.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+                themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.theme = 'light';
+                themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+
+        // LTR/RTL Logic
+        if (localStorage.dir === 'rtl') {
+            root.dir = 'rtl';
+            dirBtn.innerText = 'RTL';
+        }
+
+        dirBtn.addEventListener('click', () => {
+            if (root.dir === 'rtl') {
+                root.dir = 'ltr';
+                localStorage.dir = 'ltr';
+                dirBtn.innerText = 'LTR';
+            } else {
+                root.dir = 'rtl';
+                localStorage.dir = 'rtl';
+                dirBtn.innerText = 'RTL';
+            }
+        });
+    </script>
+</body>
+</html>

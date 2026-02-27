@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="assets/lifeguard.png">
+    <title>SAFEGUARD | Deployment Imminent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { emergency: '#dc2626' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { overflow: hidden; position: relative; }
+        /* Refined pulse to ensure it stays behind content */
+        .bg-pulse { 
+            animation: pulse-bg 6s ease-in-out infinite; 
+            filter: blur(100px);
+        }
+        @keyframes pulse-bg {
+            0%, 100% { opacity: 0.1; transform: scale(1) translate(-50%, -50%); }
+            50% { opacity: 0.25; transform: scale(1.3) translate(-50%, -50%); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-gray-950 text-slate-900 dark:text-white transition-colors duration-300 h-full w-full flex flex-col justify-center items-center">
+
+    <header class="fixed top-0 left-0 w-full p-5 md:p-8 flex justify-between items-center z-[100] bg-gradient-to-b from-white/50 dark:from-gray-950/50 to-transparent">
+        <a href="index.html" class="relative z-[110] text-xl md:text-3xl font-black text-emergency italic tracking-tighter hover:scale-105 transition-transform">
+            SAFEGUARD
+        </a>
+
+        <div class="relative z-[110] flex items-center bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-full p-1 shadow-xl border border-slate-200 dark:border-gray-800">
+            <button class="js-theme-toggle w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-gray-800 transition-all">
+                <i class="fas fa-moon text-xs"></i>
+            </button>
+            <div class="w-px h-4 bg-slate-200 dark:bg-gray-700 mx-1"></div>
+            <button class="js-dir-toggle px-3 h-8 md:h-10 flex items-center justify-center rounded-full text-[9px] md:text-[11px] font-black uppercase tracking-widest hover:bg-slate-100 dark:hover:bg-gray-800 transition-all">
+                LTR
+            </button>
+        </div>
+    </header>
+
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/2 left-1/2 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-emergency rounded-full bg-pulse"></div>
+    </div>
+
+    <main class="relative z-10 w-full max-w-[1024px] px-6 text-center mt-12 md:mt-0">
+        <div class="inline-flex items-center space-x-2 bg-emergency/10 border border-emergency/20 px-4 py-2 rounded-full mb-6 md:mb-8">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emergency opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emergency"></span>
+            </span>
+            <span class="text-emergency text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em]">Deployment Status: Active</span>
+        </div>
+
+        <h1 class="text-4xl md:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 uppercase italic leading-[0.9]">
+            Something <br> Big is <span class="text-emergency">Landing.</span>
+        </h1>
+        
+        <p class="text-slate-500 dark:text-gray-400 text-xs md:text-xl max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed font-medium">
+            Fine-tuning final protocols. Join the waitlist for early access to the bunker and exclusive launch-day gear.
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-2xl mx-auto mb-12 md:mb-16">
+            <div class="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm p-4 md:p-6 rounded-[1.5rem] md:rounded-[2rem] border border-slate-200 dark:border-gray-800 shadow-lg">
+                <span id="days" class="block text-2xl md:text-5xl font-black text-slate-900 dark:text-white">00</span>
+                <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-slate-400">Days</span>
+            </div>
+            <div class="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm p-4 md:p-6 rounded-[1.5rem] md:rounded-[2rem] border border-slate-200 dark:border-gray-800 shadow-lg">
+                <span id="hours" class="block text-2xl md:text-5xl font-black text-slate-900 dark:text-white">00</span>
+                <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-slate-400">Hours</span>
+            </div>
+            <div class="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm p-4 md:p-6 rounded-[1.5rem] md:rounded-[2rem] border border-slate-200 dark:border-gray-800 shadow-lg">
+                <span id="minutes" class="block text-2xl md:text-5xl font-black text-slate-900 dark:text-white">00</span>
+                <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-slate-400">Min</span>
+            </div>
+            <div class="bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm p-4 md:p-6 rounded-[1.5rem] md:rounded-[2rem] border border-slate-200 dark:border-gray-800 shadow-lg">
+                <span id="seconds" class="block text-2xl md:text-5xl font-black text-emergency">00</span>
+                <span class="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-slate-400">Sec</span>
+            </div>
+        </div>
+
+        <form class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-lg mx-auto">
+            <input type="email" placeholder="Enter security email" class="w-full px-5 py-4 bg-white/80 dark:bg-gray-900/80 border border-slate-200 dark:border-gray-800 rounded-xl md:rounded-2xl outline-none focus:ring-2 focus:ring-emergency/20 dark:text-white text-sm">
+            <button class="w-full sm:w-auto whitespace-nowrap bg-emergency text-white px-8 py-4 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-[10px] md:text-xs shadow-xl shadow-red-500/20 hover:bg-red-700 transition-all active:scale-95">
+                Notify Me
+            </button>
+        </form>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const html = document.documentElement;
+            const themeBtns = document.querySelectorAll('.js-theme-toggle');
+            const dirBtns = document.querySelectorAll('.js-dir-toggle');
+            
+            const setTheme = (isDark) => {
+                if (isDark) {
+                    html.classList.add('dark');
+                    themeBtns.forEach(btn => btn.innerHTML = '<i class="fas fa-sun text-yellow-500 text-xs"></i>');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    html.classList.remove('dark');
+                    themeBtns.forEach(btn => btn.innerHTML = '<i class="fas fa-moon text-xs"></i>');
+                    localStorage.setItem('theme', 'light');
+                }
+            };
+            themeBtns.forEach(btn => btn.addEventListener('click', () => setTheme(!html.classList.contains('dark'))));
+
+            const setDir = (dir) => {
+                html.setAttribute('dir', dir);
+                dirBtns.forEach(btn => btn.innerText = dir.toUpperCase());
+                localStorage.setItem('dir', dir);
+            };
+            dirBtns.forEach(btn => btn.addEventListener('click', () => {
+                const current = html.getAttribute('dir') || 'ltr';
+                setDir(current === 'ltr' ? 'rtl' : 'ltr');
+            }));
+
+            if (localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) setTheme(true);
+            if (localStorage.dir) setDir(localStorage.dir);
+
+            // Countdown Logic
+            const launchDate = new Date().getTime() + (7 * 24 * 60 * 60 * 1000);
+            const updateCounter = () => {
+                const now = new Date().getTime();
+                const diff = launchDate - now;
+                const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').innerText = d.toString().padStart(2, '0');
+                document.getElementById('hours').innerText = h.toString().padStart(2, '0');
+                document.getElementById('minutes').innerText = m.toString().padStart(2, '0');
+                document.getElementById('seconds').innerText = s.toString().padStart(2, '0');
+            };
+            setInterval(updateCounter, 1000);
+            updateCounter();
+        });
+    </script>
+</body>
+</html>
