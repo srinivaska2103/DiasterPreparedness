@@ -278,9 +278,11 @@
 
                 <div class="space-y-4 pt-4">
                     <div class="group flex items-center space-x-4 p-4 bg-slate-50 dark:bg-gray-900 rounded-2xl border border-slate-100 dark:border-gray-800 hover:border-emergency transition-all">
-                        <div class="w-10 h-10 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center text-emergency shadow-sm group-hover:bg-emergency group-hover:text-white transition-all">
-                            <i class="fas fa-shield-heart text-xs"></i>
-                        </div>
+                       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<div class="group w-10 h-10 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center text-emergency shadow-sm group-hover:bg-emergency group-hover:text-white transition-all border border-slate-100 dark:border-gray-700">
+    <i class="fa-solid fa-shield-heart text-base"></i>
+</div>
                         <span class="text-xs font-black uppercase tracking-widest text-slate-900 dark:text-white">Risk Mitigation</span>
                     </div>
                     <div class="group flex items-center space-x-4 p-4 bg-slate-50 dark:bg-gray-900 rounded-2xl border border-slate-100 dark:border-gray-800 hover:border-emergency transition-all">
@@ -788,63 +790,54 @@
     </div>
 </section>
 
-<section class="relative py-20 md:py-32 bg-white transition-colors duration-300 overflow-hidden">
-    
-    <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
-         style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 30px 30px;">
-    </div>
-    
-    <div class="absolute top-10 right-10 w-64 h-64 bg-slate-100 rounded-full blur-3xl opacity-50 -z-10 animate-pulse"></div>
-    <div class="absolute bottom-10 left-10 w-48 h-48 bg-emergency/5 rounded-full blur-2xl -z-10"></div>
-
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <div class="bg-slate-50 border border-slate-200 rounded-[3rem] p-8 md:p-24 shadow-2xl shadow-slate-200/50 text-center relative overflow-hidden">
+<section class="py-20 bg-white dark:bg-gray-950 transition-colors duration-500">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="relative overflow-hidden rounded-[2.5rem] md:rounded-[3rem] bg-slate-50 dark:bg-gray-900 border border-slate-200 dark:border-gray-800 p-8 md:p-24 shadow-xl shadow-slate-200/50 dark:shadow-none text-center">
             
-            <div class="inline-flex items-center space-x-2 bg-white border border-slate-200 px-4 py-2 rounded-full mb-10 shadow-sm">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emergency opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emergency"></span>
-                </span>
-                <span class="text-slate-900 text-[10px] font-black uppercase tracking-[0.3em]">Protocol Status: Ready</span>
-            </div>
+            <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-emergency/5 dark:bg-emergency/10 rounded-full blur-[100px] animate-pulse"></div>
+            <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-slate-200/60 dark:bg-slate-800/40 rounded-full blur-[80px]"></div>
 
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-4xl md:text-7xl font-black text-slate-900 leading-[0.95] mb-8 uppercase italic tracking-tighter">
-                    Security isn't a <br> product. It's a <span class="text-emergency">Legacy.</span>
-                </h2>
-
-                <p class="text-slate-500 text-lg md:text-2xl max-w-2xl mx-auto mb-14 leading-relaxed font-medium">
-                    Join the SAFEGUARD community today. Get professional-grade field reports, gear audits, and community readiness training delivered to your bunker.
-                </p>
-
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto">
-                    <a href="login.html">
-                         <button class="group relative w-full sm:w-80 bg-emergency text-white py-6 rounded-2xl font-black uppercase tracking-widest text-xs transition-all shadow-xl shadow-red-500/20 hover:bg-red-700 hover:-translate-y-1 active:scale-95 overflow-hidden">
-                        <span class="relative z-10 flex items-center justify-center">
-                            Authorize Access
-                            <i class="fas fa-lock-open ml-3 group-hover:rotate-12 transition-transform"></i>
-                        </span>
-                        <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                    </button>
-                    </a>
-                   
-                    <a href="contact.html">
-                         <button class="w-full sm:w-80 bg-white text-slate-900 border border-slate-200 py-6 rounded-2xl font-black uppercase tracking-widest text-xs transition-all hover:bg-slate-50 hover:border-slate-300 active:scale-95 shadow-sm">
-                        View Safety Roadmap
-                    </button>
-                    </a>
-                   
+            <div class="relative z-10 flex flex-col items-center">
+                
+                <div class="inline-flex items-center space-x-2 bg-white dark:bg-gray-800 border border-slate-200 dark:border-gray-700 px-5 py-2 rounded-full mb-8 md:mb-10 shadow-sm backdrop-blur-md">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emergency opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emergency"></span>
+                    </span>
+                    <span class="text-slate-900 dark:text-white text-[10px] font-black uppercase tracking-[0.3em]">System Status: Operational</span>
                 </div>
 
-                <div class="mt-16 pt-8 border-t border-slate-200/60 flex flex-wrap justify-center gap-8 opacity-40 grayscale">
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-shield-alt text-lg"></i>
-                        <span class="text-[9px] font-black uppercase tracking-widest">Encrypted Comms</span>
-                    </div>
-                    <div class="flex items-center space-x-2">
-                        <i class="fas fa-user-check text-lg"></i>
-                        <span class="text-[9px] font-black uppercase tracking-widest">Verified 2026 Ready</span>
-                    </div>
+                <h2 class="text-3xl md:text-6xl lg:text-7xl font-black text-slate-900 dark:text-white leading-[0.95] mb-6 md:mb-8 max-w-4xl uppercase tracking-tighter italic">
+                    Hope is not a <span class="text-emergency underline decoration-slate-300 dark:decoration-gray-700">Strategy.</span> <br>
+                    Being Prepared is.
+                </h2>
+
+                <p class="text-slate-600 dark:text-gray-400 text-sm md:text-xl max-w-2xl mb-10 md:mb-14 leading-relaxed font-medium px-2">
+                    Don't wait for the siren to start your plan. Join over 50,000+ citizens who have secured their survival infrastructure with SAFEGUARD.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 w-full sm:w-auto">
+                   <a href="contact.html" class="w-full sm:w-auto">
+                     <button class="group relative w-full sm:w-72 md:w-80 bg-emergency hover:bg-red-700 text-white py-4 md:py-6 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-xs md:text-sm transition-all shadow-2xl shadow-red-500/30 active:scale-95 overflow-hidden">
+                        <span class="relative z-10 flex items-center justify-center">
+                            Get Your Kit Now
+                            <i class="fas fa-bolt ml-3 group-hover:animate-bounce"></i>
+                        </span>
+                        <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+                    </button>
+                   </a>
+                   
+                   <a href="comingsoon.html" class="w-full sm:w-auto">
+                    <button class="w-full sm:w-72 md:w-80 bg-slate-900 dark:bg-white text-white dark:text-slate-900 py-4 md:py-6 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-xs md:text-sm transition-all shadow-xl shadow-slate-900/10 active:scale-95 border border-transparent dark:border-gray-200">
+                        Download Free Guide
+                    </button>
+                   </a>
+                </div>
+
+                <div class="mt-12 md:mt-16 flex flex-wrap justify-center items-center gap-4 md:gap-8 opacity-60">
+                    <span class="text-slate-400 dark:text-gray-500 text-[9px] md:text-[10px] font-black uppercase tracking-widest border-r border-slate-200 dark:border-gray-800 pr-4 md:pr-8 last:border-0">ISO 9001 Certified</span>
+                    <span class="text-slate-400 dark:text-gray-500 text-[9px] md:text-[10px] font-black uppercase tracking-widest border-r border-slate-200 dark:border-gray-800 pr-4 md:pr-8 last:border-0">GSA Schedule Partner</span>
+                    <span class="text-slate-400 dark:text-gray-500 text-[9px] md:text-[10px] font-black uppercase tracking-widest">Field Tested 2026</span>
                 </div>
             </div>
         </div>

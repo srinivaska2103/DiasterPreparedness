@@ -191,9 +191,15 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="group p-8 bg-slate-50 dark:bg-gray-900 rounded-[2.5rem] border border-slate-100 dark:border-gray-800 hover:border-emergency transition-all">
-                <div class="w-12 h-12 bg-emergency/10 rounded-2xl flex items-center justify-center text-emergency mb-6 group-hover:scale-110 transition-transform">
-                    <i class="fas fa-shield-check text-xl"></i>
-                </div>
+               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<div class="group w-12 h-12 bg-emergency/10 rounded-2xl flex items-center justify-center text-emergency mb-6 group-hover:scale-110 group-hover:bg-emergency/20 transition-all duration-300 border border-emergency/5">
+    
+    <i class="fa-solid fa-shield-halved text-2xl relative z-10"></i>
+    
+    <div class="absolute w-8 h-8 bg-emergency/10 blur-xl rounded-full group-hover:bg-emergency/30 transition-colors"></div>
+    
+</div>
                 <h4 class="text-xl font-black text-slate-900 dark:text-white uppercase mb-2 italic">Lifetime Support</h4>
                 <p class="text-sm text-slate-500 dark:text-gray-400">Every piece of gear includes 24/7 technical advisory access.</p>
             </div>
@@ -323,41 +329,46 @@
         });
     });
 </script>
-
-<section class="py-24 bg-white dark:bg-gray-950">
+<section class="py-24 bg-white dark:bg-gray-950 transition-colors duration-500 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4">
-        <div class="relative rounded-[3rem] bg-slate-900 overflow-hidden p-8 md:p-20 text-center">
+        
+        <div class="relative rounded-[2.5rem] md:rounded-[3rem] bg-slate-900 dark:bg-slate-900/40 border border-slate-800 dark:border-white/5 overflow-hidden p-8 md:p-20 text-center shadow-2xl">
+            
             <img src="https://images.unsplash.com/photo-1510511459019-5dee995d3ff4?q=80&w=1200" 
-                 class="absolute inset-0 w-full h-full object-cover opacity-20" alt="Background">
+                 class="absolute inset-0 w-full h-full object-cover opacity-20 dark:opacity-10 grayscale hover:grayscale-0 transition-all duration-1000" alt="Background">
+            
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent"></div>
 
             <div class="relative z-10 flex flex-col items-center">
-                <div class="mb-8">
-                    <span class="inline-block bg-emergency text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-[0.3em] animate-pulse">
+                
+                <div class="mb-6 md:mb-8">
+                    <span class="inline-block bg-emergency text-white text-[9px] md:text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-[0.2em] md:tracking-[0.3em] animate-pulse">
                         Final Warning: 2026 Quota Remaining
                     </span>
                 </div>
 
-                <h2 class="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-none mb-8 max-w-4xl">
+                <h2 class="text-3xl md:text-6xl font-black text-white uppercase italic tracking-tighter leading-none mb-6 md:mb-8 max-w-4xl">
                     Ready to Secure <br> Your <span class="text-emergency">Infrastructure?</span>
                 </h2>
 
-                <p class="text-slate-400 text-lg md:text-xl max-w-xl mb-12 font-medium">
+                <p class="text-slate-400 text-sm md:text-xl max-w-xl mb-10 md:mb-12 font-medium px-2">
                     Contact our specialists for custom-built bunker configurations or bulk deployment quotes.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                    <button class="bg-emergency text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-red-700 transition-all active:scale-95 shadow-2xl shadow-red-500/40">
+                    
+                    <button class="w-full sm:w-auto bg-emergency text-white px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-red-700 transition-all active:scale-95 shadow-2xl shadow-red-500/40">
                         Get Custom Quote
                     </button>
-                    <button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-white/20 transition-all">
+
+                    <button class="w-full sm:w-auto bg-white/5 dark:bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 md:px-10 py-4 md:py-5 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-[10px] md:text-xs hover:bg-white/20 transition-all">
                         Talk to Field Expert
                     </button>
+                    
                 </div>
 
-                <div class="mt-12 flex items-center space-x-4 opacity-70">
-                    
-                    <p class="text-[10px] text-slate-400 uppercase font-black tracking-widest">
+                <div class="mt-10 md:mt-12 flex items-center space-x-4 opacity-50 dark:opacity-30">
+                    <p class="text-[9px] md:text-[10px] text-slate-400 uppercase font-black tracking-widest">
                         +420 citizens secured this week
                     </p>
                 </div>
