@@ -41,16 +41,19 @@
             </div>
 
             <div class="flex items-center space-x-2 sm:space-x-4">
-                <div class="hidden sm:flex items-center bg-gray-100 dark:bg-gray-800 rounded-full p-1 border dark:border-gray-700">
-                    <button class="js-theme-toggle w-8 h-8 flex items-center justify-center rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all shadow-sm">
-                        <i class="fas fa-moon text-xs"></i>
-                    </button>
-                    <button class="js-dir-toggle w-10 h-8 flex items-center justify-center rounded-full text-[10px] font-black hover:bg-white dark:hover:bg-gray-700 transition-all">
-                        LTR
-                    </button>
-                </div>
+               <div class="hidden sm:flex items-center space-x-3">
+    <button class="js-theme-toggle w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800 border border-slate-200 dark:border-gray-700 hover:border-emergency/50 hover:bg-white dark:hover:bg-gray-700 transition-all shadow-sm group">
+        <i class="fas fa-moon text-xs text-slate-600 dark:text-gray-400 group-hover:text-emergency transition-colors"></i>
+    </button>
 
-                <a href="login.html" class="hidden md:inline-block bg-emergency text-white px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:bg-red-700 shadow-lg transition-all">
+    <button class="js-dir-toggle px-3 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800 border border-slate-200 dark:border-gray-700 hover:border-emergency/50 hover:bg-white dark:hover:bg-gray-700 transition-all shadow-sm group">
+        <span class="text-[10px] font-black uppercase tracking-widest text-slate-600 dark:text-gray-400 group-hover:text-emergency transition-colors">
+            LTR
+        </span>
+    </button>
+</div>
+
+                <a href="regesiter.html" class="hidden md:inline-block bg-emergency text-white px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:bg-red-700 shadow-lg transition-all">
                     Register
                 </a>
 
@@ -96,7 +99,7 @@
                         LTR
                     </button>
                 </div>
-                <a href="login.html" class="w-full sm:w-auto text-center bg-emergency text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-red-700 shadow-lg transition-all">
+                <a href="regesiter.html" class="w-full sm:w-auto text-center bg-emergency text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-red-700 shadow-lg transition-all">
                     Register Now
                 </a>
             </div>
@@ -175,149 +178,144 @@
     });
 </script>
 
-<section class="py-24 bg-white dark:bg-gray-900 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4">
+<section class="py-12 md:py-20 lg:py-24 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
         
- <header class="relative w-full min-h-[80vh] md:min-h-[70vh] lg:min-h-screen flex items-center bg-white dark:bg-gray-950 overflow-hidden transition-colors duration-500">
-    
-    <div class="absolute top-0 right-0 w-1/3 h-full bg-slate-50 dark:bg-gray-900/50 -skew-x-12 translate-x-1/4 z-0 hidden lg:block"></div>
-    <div class="absolute -top-24 -left-24 w-72 h-72 md:w-96 md:h-96 bg-emergency/5 rounded-full blur-[100px] animate-pulse"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-6 md:py-10 lg:py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-12 items-center">
+        <header class="relative w-full min-h-[60vh] md:min-h-[70vh] lg:min-h-screen flex items-center bg-white dark:bg-gray-950 overflow-hidden transition-colors duration-500 rounded-[2rem] md:rounded-[3rem] mb-12 md:mb-20">
             
-            <div class="space-y-5 md:space-y-6 lg:space-y-8 text-center md:text-left order-2 md:order-1">
-                <div class="inline-flex items-center space-x-2 bg-slate-100 dark:bg-gray-800 px-3 py-1.5 rounded-full border border-slate-200 dark:border-gray-700">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emergency opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emergency"></span>
-                    </span>
-                    <span class="text-[8px] md:text-[10px] font-black uppercase tracking-[0.15em] text-slate-600 dark:text-gray-400">
-                        System Ready: 2026 Protocol
-                    </span>
-                </div>
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-slate-50 dark:bg-gray-900/50 -skew-x-12 translate-x-1/4 z-0 hidden lg:block"></div>
+            <div class="absolute -top-24 -left-24 w-72 h-72 md:w-96 md:h-96 bg-emergency/5 rounded-full blur-[100px] animate-pulse"></div>
 
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-black text-slate-900 dark:text-white leading-[0.95] tracking-tighter uppercase italic">
-                    Prepare for <br class="hidden sm:block">
-                    <span class="text-emergency">The Unknown.</span>
-                </h1>
-
-                <p class="text-slate-500 dark:text-gray-400 text-xs md:text-sm lg:text-lg max-w-md mx-auto md:mx-0 leading-relaxed font-medium">
-                    Professional-grade survival infrastructure for the modern citizen. Build your bunker today.
-                </p>
-
-                <div class="flex flex-col xs:flex-row items-center justify-center md:justify-start gap-3 md:gap-4">
-                    <a href="login.html" class="w-full xs:w-auto">
-                        <button class="w-full sm:w-auto bg-emergency text-white px-6 md:px-8 lg:px-10 py-3.5 md:py-4 lg:py-5 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-[10px] md:text-xs shadow-xl shadow-red-500/20 hover:bg-red-700 transition-all active:scale-95">
-                            Get Started
-                        </button>
-                    </a>
-                    <a href="404.html" class="w-full xs:w-auto">
-                        <button class="w-full sm:w-auto flex items-center justify-center space-x-3 bg-white dark:bg-gray-800 text-slate-900 dark:text-white px-6 md:px-8 lg:px-10 py-3.5 md:py-4 lg:py-5 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-[10px] md:text-xs border border-slate-200 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-700 transition-all">
-                            <i class="fas fa-play text-[9px] text-emergency"></i>
-                            <span>Watch Protocol</span>
-                        </button>
-                    </a>
-                </div>
-
-                <div class="flex items-center justify-center md:justify-start space-x-6 pt-2 md:pt-4 opacity-40 grayscale">
-                    <i class="fab fa-aws text-xl lg:text-3xl"></i>
-                    <i class="fas fa-shield-virus text-xl lg:text-3xl"></i>
-                    <i class="fas fa-satellite-dish text-xl lg:text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="relative group order-1 md:order-2 px-2 sm:px-0">
-                <div class="absolute -top-3 -left-1 md:-top-4 md:-left-4 z-20 bg-white dark:bg-gray-800 p-2 md:p-3 rounded-lg md:rounded-xl shadow-xl border border-slate-100 dark:border-gray-700 animate-bounce hidden xs:block" style="animation-duration: 4s;">
-                    <p class="text-[7px] md:text-[8px] font-black text-emergency uppercase tracking-tighter">New Arrival</p>
-                    <p class="text-[9px] md:text-xs font-bold dark:text-white">Solar Pulse Gen V3</p>
-                </div>
-
-                <div class="relative rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden shadow-2xl border-2 md:border-4 border-white dark:border-gray-800 transition-transform duration-700">
-                    <img src="assets/Bunker" 
-                         alt="Tactical Gear" 
-                         class="w-full h-[220px] sm:h-[300px] md:h-[350px] lg:h-[600px] object-cover group-hover:scale-105 transition-transform duration-1000">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-8 md:py-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
                     
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent opacity-80"></div>
-                    
-                    <div class="absolute bottom-4 left-4 lg:bottom-10 lg:left-10 text-white text-left">
-                        <p class="text-lg lg:text-4xl font-black italic uppercase tracking-tighter">Bunker One</p>
-                        <p class="text-[8px] lg:text-[10px] font-bold uppercase tracking-widest opacity-70">Field HQ Location</p>
+                    <div class="space-y-6 md:space-y-8 text-center md:text-left order-2 md:order-1">
+                        <div class="inline-flex items-center space-x-2 bg-slate-100 dark:bg-gray-800 px-3 py-1.5 rounded-full border border-slate-200 dark:border-gray-700">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emergency opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-emergency"></span>
+                            </span>
+                            <span class="text-[8px] md:text-[10px] font-black uppercase tracking-[0.15em] text-slate-600 dark:text-gray-400">
+                                System Ready: 2026 Protocol
+                            </span>
+                        </div>
+
+                        <h1 class="text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-black text-slate-900 dark:text-white leading-[0.95] tracking-tighter uppercase italic">
+                            Prepare for <br class="hidden sm:block">
+                            <span class="text-emergency">The Unknown.</span>
+                        </h1>
+
+                        <p class="text-slate-500 dark:text-gray-400 text-sm lg:text-lg max-w-md mx-auto md:mx-0 leading-relaxed font-medium">
+                            Professional-grade survival infrastructure for the modern citizen. Build your bunker today.
+                        </p>
+
+                        <div class="flex flex-col xs:flex-row items-center justify-center md:justify-start gap-4">
+                            <a href="login.html" class="w-full xs:w-auto">
+                                <button class="w-full sm:w-auto bg-emergency text-white px-8 lg:px-10 py-4 lg:py-5 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-xs shadow-xl shadow-red-500/20 hover:bg-red-700 transition-all active:scale-95">
+                                    Get Started
+                                </button>
+                            </a>
+                            <a href="404.html" class="w-full xs:w-auto">
+                                <button class="w-full sm:w-auto flex items-center justify-center space-x-3 bg-white dark:bg-gray-800 text-slate-900 dark:text-white px-8 lg:px-10 py-4 lg:py-5 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-xs border border-slate-200 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-700 transition-all">
+                                    <i class="fas fa-play text-[9px] text-emergency"></i>
+                                    <span>Watch Protocol</span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="relative group order-1 md:order-2">
+                        <div class="absolute -top-3 -left-1 md:-top-4 md:-left-4 z-20 bg-white dark:bg-gray-800 p-2 md:p-3 rounded-lg md:rounded-xl shadow-xl border border-slate-100 dark:border-gray-700 animate-bounce hidden xs:block">
+                            <p class="text-[7px] md:text-[8px] font-black text-emergency uppercase tracking-tighter">New Arrival</p>
+                            <p class="text-[9px] md:text-xs font-bold dark:text-white">Solar Pulse Gen V3</p>
+                        </div>
+
+                        <div class="relative rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[4rem] overflow-hidden shadow-2xl border-2 md:border-4 border-white dark:border-gray-800 transition-transform duration-700">
+                            <img src="assets/Bunker" alt="Tactical Gear" class="w-full h-[250px] sm:h-[350px] lg:h-[500px] xl:h-[600px] object-cover group-hover:scale-105 transition-transform duration-1000">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-4 left-4 lg:bottom-10 lg:left-10 text-white text-left">
+                                <p class="text-lg lg:text-4xl font-black italic uppercase tracking-tighter">Bunker One</p>
+                                <p class="text-[8px] lg:text-[10px] font-bold uppercase tracking-widest opacity-70">Field HQ Location</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="absolute -bottom-6 -right-6 w-32 h-32 md:w-48 md:h-48 bg-emergency rounded-full -z-10 blur-3xl opacity-10"></div>
             </div>
+        </header>
 
-        </div>
-    </div>
-</header>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-16">
             
-            <div class="bg-slate-50 dark:bg-gray-800 p-8 md:p-12 rounded-[3rem] border border-slate-100 dark:border-gray-700 shadow-xl">
+            <div class="bg-slate-50 dark:bg-gray-800 p-6 md:p-10 lg:p-12 rounded-[2.5rem] md:rounded-[3rem] border border-slate-100 dark:border-gray-700 shadow-xl">
                 <form class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                         <div class="space-y-2">
                             <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">Full Name</label>
-                            <input type="text" placeholder="John Doe" class="w-full px-6 py-4 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-700 rounded-2xl outline-none focus:ring-2 focus:ring-emergency/20 transition-all dark:text-white">
+                            <input type="text" placeholder="John Doe" class="w-full px-5 md:px-6 py-4 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-700 rounded-2xl outline-none focus:ring-2 focus:ring-emergency/20 transition-all dark:text-white text-sm">
                         </div>
                         <div class="space-y-2">
                             <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">Inquiry Type</label>
-                            <select class="w-full px-6 py-4 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-700 rounded-2xl outline-none focus:ring-2 focus:ring-emergency/20 transition-all dark:text-white appearance-none">
-                                <option>General Inquiry</option>
-                                <option>Technical Support</option>
-                                <option>Bulk Orders</option>
-                            </select>
+                            <div class="relative">
+                                <select class="w-full px-5 md:px-6 py-4 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-700 rounded-2xl outline-none focus:ring-2 focus:ring-emergency/20 transition-all dark:text-white appearance-none text-sm">
+                                    <option>General Inquiry</option>
+                                    <option>Technical Support</option>
+                                    <option>Bulk Orders</option>
+                                </select>
+                                <i class="fas fa-chevron-down absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-xs"></i>
+                            </div>
                         </div>
                     </div>
                     <div class="space-y-2">
                         <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">Message</label>
-                        <textarea rows="5" placeholder="State your requirements..." class="w-full px-6 py-4 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-700 rounded-2xl outline-none focus:ring-2 focus:ring-emergency/20 transition-all dark:text-white"></textarea>
+                        <textarea rows="4" placeholder="State your requirements..." class="w-full px-5 md:px-6 py-4 bg-white dark:bg-gray-900 border border-slate-200 dark:border-gray-700 rounded-2xl outline-none focus:ring-2 focus:ring-emergency/20 transition-all dark:text-white text-sm"></textarea>
                     </div>
-                    <button class="w-full bg-emergency text-white py-5 rounded-2xl font-black uppercase tracking-widest text-xs shadow-xl shadow-red-500/20 hover:bg-red-700 active:scale-95 transition-all">
+                    <button class="w-full bg-emergency text-white py-4 md:py-5 rounded-2xl font-black uppercase tracking-widest text-xs shadow-xl shadow-red-500/20 hover:bg-red-700 active:scale-95 transition-all">
                         Transmit Message
                     </button>
                 </form>
             </div>
 
-            <div class="flex flex-col space-y-8">
-                <div class="group p-8 bg-white dark:bg-gray-900 rounded-[2.5rem] border border-slate-100 dark:border-gray-800 hover:border-emergency transition-all shadow-sm">
-                    <div class="flex items-start space-x-6">
-                        <div class="w-14 h-14 bg-emergency/10 rounded-2xl flex items-center justify-center text-emergency text-xl">
+            <div class="flex flex-col space-y-6 md:space-y-8">
+                <div class="group p-6 md:p-8 bg-white dark:bg-gray-900 rounded-[2rem] md:rounded-[2.5rem] border border-slate-100 dark:border-gray-800 hover:border-emergency transition-all shadow-sm">
+                    <div class="flex items-start space-x-4 md:space-x-6">
+                        <div class="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-emergency/10 rounded-2xl flex items-center justify-center text-emergency text-lg md:text-xl">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div>
-                            <h4 class="text-sm font-black uppercase tracking-widest text-slate-400 mb-2">Primary Bunker</h4>
-                            <p class="text-xl font-bold text-slate-900 dark:text-white leading-relaxed">
+                            <h4 class="text-[10px] md:text-sm font-black uppercase tracking-widest text-slate-400 mb-1 md:mb-2">Primary Bunker</h4>
+                            <p class="text-lg md:text-xl font-bold text-slate-900 dark:text-white leading-tight">
                                 782 Survival Way, Sector 4<br>New York, NY 10001
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div class="group p-8 bg-white dark:bg-gray-900 rounded-[2.5rem] border border-slate-100 dark:border-gray-800 hover:border-emergency transition-all shadow-sm">
-                    <div class="flex items-start space-x-6">
-                        <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500 text-xl">
+                <div class="group p-6 md:p-8 bg-white dark:bg-gray-900 rounded-[2rem] md:rounded-[2.5rem] border border-slate-100 dark:border-gray-800 hover:border-emergency transition-all shadow-sm">
+                    <div class="flex items-start space-x-4 md:space-x-6">
+                        <div class="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500 text-lg md:text-xl">
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div>
-                            <h4 class="text-sm font-black uppercase tracking-widest text-slate-400 mb-2">Direct Comms</h4>
-                            <p class="text-xl font-bold text-slate-900 dark:text-white">+1 (888) 000-SAFE</p>
-                            <p class="text-sm font-medium text-slate-500">24/7 Response Line</p>
+                            <h4 class="text-[10px] md:text-sm font-black uppercase tracking-widest text-slate-400 mb-1 md:mb-2">Direct Comms</h4>
+                            <p class="text-lg md:text-xl font-bold text-slate-900 dark:text-white">+1 (888) 000-SAFE</p>
+                            <p class="text-xs md:text-sm font-medium text-slate-500">24/7 Response Line</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="flex-grow grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="p-6 bg-slate-900 rounded-3xl text-white">
-                        <i class="fab fa-discord text-2xl mb-4"></i>
-                        <h5 class="font-bold">Community Discord</h5>
-                        <p class="text-[10px] uppercase tracking-widest opacity-50">Join the survivalists</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-6 bg-slate-900 rounded-[2rem] text-white flex flex-col justify-between min-h-[140px]">
+                        <i class="fab fa-discord text-2xl"></i>
+                        <div>
+                            <h5 class="font-bold text-sm">Community Discord</h5>
+                            <p class="text-[10px] uppercase tracking-widest opacity-50">Join the survivalists</p>
+                        </div>
                     </div>
-                    <div class="p-6 bg-emergency rounded-3xl text-white">
-                        <i class="fas fa-headset text-2xl mb-4"></i>
-                        <h5 class="font-bold">Live Portal</h5>
-                        <p class="text-[10px] uppercase tracking-widest opacity-50">Instant Support</p>
+                    <div class="p-6 bg-emergency rounded-[2rem] text-white flex flex-col justify-between min-h-[140px]">
+                        <i class="fas fa-headset text-2xl"></i>
+                        <div>
+                            <h5 class="font-bold text-sm">Live Portal</h5>
+                            <p class="text-[10px] uppercase tracking-widest opacity-50">Instant Support</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -351,24 +349,14 @@
         </div>
     </div>
 </section>
-
-
-
-
-
-
-
-
-
-  <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 pt-12 pb-6 transition-colors duration-300">
+<footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 pt-12 pb-6 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
         
         <div class="space-y-6">
             <div>
-                <a href="index.html">
-                                    <h3 class="font-bold text-2xl mb-4 text-emergency tracking-tighter">SAFEGUARD</h3>
-
-                </a>
+               <a href="index.html" class="flex-shrink-0 font-black text-2xl text-emergency italic tracking-tighter cursor-pointer">
+                SAFEGUARD
+            </a>
                 <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
                     Your number one source for emergency readiness and survival supplies since 2024. Protecting families with grade-A tactical gear.
                 </p>

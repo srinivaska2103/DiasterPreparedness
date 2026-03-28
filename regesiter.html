@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" href="assets/lifeguard.png">
-    <title>SAFEGUARD | Access Authorization</title>
+    <title>SAFEGUARD | Establish Protocol</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -35,56 +35,64 @@
         </button>
     </div>
 
-    <main class="w-full max-w-[1024px] h-full md:h-auto md:max-h-[90vh] flex items-center justify-center p-0 md:p-6 lg:p-12">
+    <main class="w-full max-w-[1024px] h-full md:h-auto md:max-h-[95vh] flex items-center justify-center p-0 md:p-6">
         <div class="w-full h-full md:h-auto bg-white dark:bg-gray-900 rounded-none md:rounded-[3rem] shadow-2xl overflow-hidden border-none md:border md:border-slate-100 md:dark:border-gray-800 grid grid-cols-1 lg:grid-cols-2">
             
             <div class="hidden lg:flex relative bg-slate-900 items-center justify-center p-12 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1504333638930-c8787321eee0?q=80&w=800" class="absolute inset-0 w-full h-full object-cover opacity-30" alt="Survival">
-                <div class="absolute inset-0 bg-gradient-to-t from-emergency/40 to-transparent"></div>
+                <img src="https://images.unsplash.com/photo-1536431311719-398b6704d4cc?q=80&w=800" class="absolute inset-0 w-full h-full object-cover opacity-30" alt="Survival Network">
+                <div class="absolute inset-0 bg-gradient-to-t from-emergency/40 via-slate-900/40 to-transparent"></div>
                 <div class="relative z-10 text-center">
-                    <p class="text-slate-300 text-lg font-medium max-w-sm mx-auto uppercase tracking-widest leading-relaxed">
-                        Secure your infrastructure. <br> Protect your legacy.
+                    <p class="text-slate-300 text-lg font-black uppercase tracking-[0.3em] leading-relaxed italic">
+                        The world is changing. <br> Are you?
                     </p>
+                    <div class="mt-6 w-12 h-1 bg-emergency mx-auto rounded-full"></div>
                 </div>
             </div>
 
             <div class="p-6 md:p-10 lg:p-12 flex flex-col justify-center overflow-y-auto scroll-container">
                 
-                <div class="mb-4 md:mb-6 text-center">
+                <div class="mb-4 text-center">
                     <a href="index.html" class="inline-block text-2xl md:text-3xl font-black text-emergency italic tracking-tighter hover:scale-105 transition-transform">
                         SAFEGUARD
                     </a>
                 </div>
 
-                <div class="mb-8 text-center">
-                    <h2 class="text-xl md:text-2xl font-black uppercase italic tracking-tighter">Welcome Back</h2>
-                    <p class="text-slate-500 dark:text-gray-400 text-xs md:text-sm">Access your bunker credentials.</p>
+                <div class="mb-6 text-center">
+                    <h2 class="text-xl md:text-2xl font-black uppercase italic tracking-tighter">Establish Protocol</h2>
+                    <p class="text-slate-500 dark:text-gray-400 text-xs md:text-sm">Initialize your survival infrastructure.</p>
                 </div>
 
-                <div class="space-y-6">
-                    <form id="login-form" class="space-y-5">
-                        <div class="space-y-1.5">
-                            <label class="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400 ml-4">Email Access</label>
-                            <input type="email" required placeholder="name@protocol.com" class="w-full px-5 py-3 md:py-4 bg-slate-50 dark:bg-gray-800 border border-slate-100 dark:border-gray-700 rounded-xl md:rounded-2xl focus:ring-2 focus:ring-emergency/20 focus:border-emergency outline-none transition-all dark:text-white text-sm">
+                <div class="space-y-4">
+                    <form id="signup-form" class="space-y-4">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="space-y-1">
+                                <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-2">First Name</label>
+                                <input type="text" required placeholder="John" class="w-full px-4 py-3 bg-slate-50 dark:bg-gray-800 border border-slate-100 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emergency/20 focus:border-emergency outline-none transition-all dark:text-white text-sm">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-2">Last Name</label>
+                                <input type="text" required placeholder="Doe" class="w-full px-4 py-3 bg-slate-50 dark:bg-gray-800 border border-slate-100 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emergency/20 focus:border-emergency outline-none transition-all dark:text-white text-sm">
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-2">Comms Channel</label>
+                            <input type="email" required placeholder="email@protocol.com" class="w-full px-4 py-3 bg-slate-50 dark:bg-gray-800 border border-slate-100 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emergency/20 focus:border-emergency outline-none transition-all dark:text-white text-sm">
                         </div>
                         
-                        <div class="space-y-1.5">
-                            <div class="flex justify-between items-center px-4">
-                                <label class="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400">Security Key</label>
-                            </div>
-                            <input type="password" required placeholder="••••••••" class="w-full px-5 py-3 md:py-4 bg-slate-50 dark:bg-gray-800 border border-slate-100 dark:border-gray-700 rounded-xl md:rounded-2xl focus:ring-2 focus:ring-emergency/20 focus:border-emergency outline-none transition-all dark:text-white text-sm">
-                                                      <a href="#" class="text-[9px] font-black uppercase tracking-widest text-emergency hover:underline">Forgot Passowrd?</a>
-
+                        <div class="space-y-1">
+                            <label class="text-[9px] font-black uppercase tracking-widest text-slate-400 ml-2">Security Key</label>
+                            <input type="password" required placeholder="Minimum 8 characters" class="w-full px-4 py-3 bg-slate-50 dark:bg-gray-800 border border-slate-100 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emergency/20 focus:border-emergency outline-none transition-all dark:text-white text-sm">
                         </div>
 
-                        <button type="submit" class="w-full bg-emergency text-white py-4 md:py-5 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-[10px] shadow-lg shadow-red-500/20 hover:bg-red-700 active:scale-95 transition-all">
-                            Authorize Entry
+                        <button type="submit" class="w-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 py-4 md:py-5 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-[10px] shadow-xl hover:opacity-90 active:scale-95 transition-all">
+                            Initialize Network
                         </button>
                     </form>
 
                     <div class="pt-2">
                         <div class="relative mb-6 text-center">
-                            <span class="relative z-10 bg-white dark:bg-gray-900 px-3 text-[9px] font-black uppercase tracking-[0.3em] text-slate-300">Alternate Link</span>
+                            <span class="relative z-10 bg-white dark:bg-gray-900 px-3 text-[9px] font-black uppercase tracking-[0.3em] text-slate-300">Third-Party Sync</span>
                             <div class="absolute top-1/2 left-0 w-full h-px bg-slate-100 dark:bg-gray-800"></div>
                         </div>
                         <div class="grid grid-cols-3 gap-3">
@@ -94,8 +102,9 @@
                         </div>
                     </div>
 
-                    <p class="text-center text-[10px] font-black text-slate-400 uppercase tracking-widest mt-6">
-                       Don't Have Account<span class="text-green-500">Sign up</span>
+                    <p class="text-center text-[11px] font-bold text-slate-400 mt-6">
+                        Already have access? 
+                        <a href="login.html" class="text-emergency uppercase tracking-widest text-[10px] ml-1 hover:underline">Log In</a>
                     </p>
                 </div>
             </div>

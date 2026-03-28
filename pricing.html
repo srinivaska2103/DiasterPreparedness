@@ -42,16 +42,19 @@
             </div>
 
             <div class="flex items-center space-x-2 sm:space-x-4">
-                <div class="hidden sm:flex items-center bg-gray-100 dark:bg-gray-800 rounded-full p-1 border dark:border-gray-700">
-                    <button class="js-theme-toggle w-8 h-8 flex items-center justify-center rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all shadow-sm">
-                        <i class="fas fa-moon text-xs"></i>
-                    </button>
-                    <button class="js-dir-toggle w-10 h-8 flex items-center justify-center rounded-full text-[10px] font-black hover:bg-white dark:hover:bg-gray-700 transition-all">
-                        LTR
-                    </button>
-                </div>
+               <div class="hidden sm:flex items-center space-x-3">
+    <button class="js-theme-toggle w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800 border border-slate-200 dark:border-gray-700 hover:border-emergency/50 hover:bg-white dark:hover:bg-gray-700 transition-all shadow-sm group">
+        <i class="fas fa-moon text-xs text-slate-600 dark:text-gray-400 group-hover:text-emergency transition-colors"></i>
+    </button>
 
-                <a href="login.html" class="hidden md:inline-block bg-emergency text-white px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:bg-red-700 shadow-lg transition-all">
+    <button class="js-dir-toggle px-3 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800 border border-slate-200 dark:border-gray-700 hover:border-emergency/50 hover:bg-white dark:hover:bg-gray-700 transition-all shadow-sm group">
+        <span class="text-[10px] font-black uppercase tracking-widest text-slate-600 dark:text-gray-400 group-hover:text-emergency transition-colors">
+            LTR
+        </span>
+    </button>
+</div>
+
+                <a href="regesiter.html" class="hidden md:inline-block bg-emergency text-white px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:bg-red-700 shadow-lg transition-all">
                     Register
                 </a>
 
@@ -97,7 +100,7 @@
                         LTR
                     </button>
                 </div>
-                <a href="login.html" class="w-full sm:w-auto text-center bg-emergency text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-red-700 shadow-lg transition-all">
+                <a href="regesiter.html" class="w-full sm:w-auto text-center bg-emergency text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-red-700 shadow-lg transition-all">
                     Register Now
                 </a>
             </div>
@@ -378,18 +381,14 @@
 </section>
 
 
-
-
-
-  <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 pt-12 pb-6 transition-colors duration-300">
+<footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 pt-12 pb-6 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
         
         <div class="space-y-6">
             <div>
-                <a href="index.html">
-                                    <h3 class="font-bold text-2xl mb-4 text-emergency tracking-tighter">SAFEGUARD</h3>
-
-                </a>
+               <a href="index.html" class="flex-shrink-0 font-black text-2xl text-emergency italic tracking-tighter cursor-pointer">
+                SAFEGUARD
+            </a>
                 <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
                     Your number one source for emergency readiness and survival supplies since 2024. Protecting families with grade-A tactical gear.
                 </p>

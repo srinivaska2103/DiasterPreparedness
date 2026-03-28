@@ -41,16 +41,19 @@
             </div>
 
             <div class="flex items-center space-x-2 sm:space-x-4">
-                <div class="hidden sm:flex items-center bg-gray-100 dark:bg-gray-800 rounded-full p-1 border dark:border-gray-700">
-                    <button class="js-theme-toggle w-8 h-8 flex items-center justify-center rounded-full hover:bg-white dark:hover:bg-gray-700 transition-all shadow-sm">
-                        <i class="fas fa-moon text-xs"></i>
-                    </button>
-                    <button class="js-dir-toggle w-10 h-8 flex items-center justify-center rounded-full text-[10px] font-black hover:bg-white dark:hover:bg-gray-700 transition-all">
-                        LTR
-                    </button>
-                </div>
+               <div class="hidden sm:flex items-center space-x-3">
+    <button class="js-theme-toggle w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800 border border-slate-200 dark:border-gray-700 hover:border-emergency/50 hover:bg-white dark:hover:bg-gray-700 transition-all shadow-sm group">
+        <i class="fas fa-moon text-xs text-slate-600 dark:text-gray-400 group-hover:text-emergency transition-colors"></i>
+    </button>
 
-                <a href="login.html" class="hidden md:inline-block bg-emergency text-white px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:bg-red-700 shadow-lg transition-all">
+    <button class="js-dir-toggle px-3 h-10 flex items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-800 border border-slate-200 dark:border-gray-700 hover:border-emergency/50 hover:bg-white dark:hover:bg-gray-700 transition-all shadow-sm group">
+        <span class="text-[10px] font-black uppercase tracking-widest text-slate-600 dark:text-gray-400 group-hover:text-emergency transition-colors">
+            LTR
+        </span>
+    </button>
+</div>
+
+                <a href="regesiter.html" class="hidden md:inline-block bg-emergency text-white px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:bg-red-700 shadow-lg transition-all">
                     Register
                 </a>
 
@@ -96,7 +99,7 @@
                         LTR
                     </button>
                 </div>
-                <a href="login.html" class="w-full sm:w-auto text-center bg-emergency text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-red-700 shadow-lg transition-all">
+                <a href="regesiter.html" class="w-full sm:w-auto text-center bg-emergency text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-red-700 shadow-lg transition-all">
                     Register Now
                 </a>
             </div>
@@ -280,45 +283,105 @@
                 <div class="absolute bottom-0 left-0 p-8">
                     <h2 class="text-2xl font-black text-white uppercase italic mb-2">Flood Survival</h2>
                     <p class="text-blue-100 text-[10px] mb-6 uppercase tracking-widest">Water filtration & signal tech.</p>
-                    <span class="text-white font-black text-[10px] uppercase tracking-[0.2em] border-b-2 border-white pb-1 group-hover:text-emergency group-hover:border-emergency transition-colors">Shop Collection</span>
+                    <!-- <span class="text-white font-black text-[10px] uppercase tracking-[0.2em] border-b-2 border-white pb-1 group-hover:text-emergency group-hover:border-emergency transition-colors">Shop Collection</span> -->
+                                        <button class="bg-emergency text-white px-6 py-2.5 rounded-xl font-black uppercase tracking-widest text-[10px] hover:bg-red-700 transition-all">Explore Gear</button>
+
                 </div>
             </div>
 
-            <div class="group relative h-[350px] md:h-[400px] overflow-hidden rounded-[2.5rem] bg-orange-900 shadow-xl cursor-pointer border border-transparent dark:border-orange-900/50">
-                <img src="assets/firesaftey" alt="Fire Safety" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-orange-950/90 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 p-8">
-                    <h2 class="text-2xl font-black text-white uppercase italic mb-4">Fire Safety</h2>
-                    <span class="bg-white/20 backdrop-blur-md text-white text-[9px] font-black px-3 py-1.5 rounded-full uppercase tracking-widest border border-white/10">Flame Retardant Gear</span>
-                </div>
-            </div>
+           <div class="group relative h-[350px] md:h-[400px] overflow-hidden rounded-[2.5rem] bg-orange-900 shadow-xl cursor-pointer border border-transparent dark:border-orange-900/50">
+    
+    <img src="assets/firesaftey" alt="Fire Safety" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700">
+    
+    <div class="absolute inset-0 bg-gradient-to-t from-orange-950 via-orange-950/40 to-transparent"></div>
+    
+    <div class="absolute inset-0 p-8 flex flex-col justify-end items-start">
+        
+        <div class="mb-4">
+            <span class="bg-white/20 backdrop-blur-md text-white text-[9px] font-black px-3 py-1.5 rounded-full uppercase tracking-widest border border-white/10">
+                Flame Retardant Gear
+            </span>
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-black text-white uppercase italic mb-2 tracking-tighter">
+            Fire Safety
+        </h2>
+
+        <p class="text-orange-100/80 text-xs md:text-sm font-medium mb-6 max-w-[240px] leading-relaxed">
+            Advanced suppression systems and heat-shielded gear for extreme environments.
+        </p>
+
+        <button class="bg-emergency text-white px-8 py-3 rounded-xl font-black uppercase tracking-widest text-[10px] hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/20 active:scale-95 transition-all">
+            Explore Gear
+        </button>
+
+    </div>
+</div>
 
             <div class="group relative h-[350px] md:h-[400px] overflow-hidden rounded-[2.5rem] bg-slate-100 dark:bg-gray-900 border border-slate-200 dark:border-gray-800 shadow-lg cursor-pointer">
-                <img src="assets/covid" alt="Pandemic" class="absolute inset-0 w-full h-full object-cover opacity-40 dark:opacity-20 group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-gray-950 via-white/40 dark:via-transparent to-transparent"></div>
-                <div class="absolute bottom-0 left-0 p-8">
-                    <h2 class="text-2xl font-black text-slate-900 dark:text-white uppercase italic mb-2">Pandemic Prep</h2>
-                    <p class="text-slate-600 dark:text-gray-400 text-[10px] font-bold uppercase tracking-widest">Medical Grade Protection</p>
-                </div>
-            </div>
+    <img src="assets/covid" alt="Pandemic" class="absolute inset-0 w-full h-full object-cover opacity-40 dark:opacity-20 group-hover:scale-110 transition-transform duration-700">
+    
+    <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-gray-950 via-white/40 dark:via-transparent to-transparent"></div>
+    
+    <div class="absolute inset-0 p-8 flex flex-col justify-end items-start">
+        
+        <h2 class="text-2xl font-black text-slate-900 dark:text-white uppercase italic mb-1 tracking-tighter">
+            Pandemic Prep
+        </h2>
 
-            <div class="group relative h-[350px] md:h-[400px] overflow-hidden rounded-[2.5rem] bg-slate-900 shadow-xl cursor-pointer border border-transparent dark:border-gray-800">
-                <img src="assets/winter" alt="Winter Storm" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 p-8 text-center w-full">
-                    <h2 class="text-2xl font-black text-white uppercase italic">Winter Storm</h2>
-                    <p class="text-slate-400 text-[10px] mt-2 tracking-[0.3em] uppercase font-bold">Thermal Endurance Gear</p>
-                </div>
-            </div>
+        <p class="text-slate-600 dark:text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-6">
+            Medical Grade Protection
+        </p>
 
-            <div class="group relative h-[350px] md:h-[400px] overflow-hidden rounded-[2.5rem] bg-slate-900 shadow-xl cursor-pointer border border-transparent dark:border-gray-800">
-                <img src="assets/simg1" alt="Winter Jacket" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 p-8 text-center w-full">
-                    <h2 class="text-2xl font-black text-white uppercase italic">Winter jacket</h2>
-                    <p class="text-slate-400 text-[10px] mt-2 tracking-[0.3em] uppercase font-bold">Thermal Endurance Gear</p>
-                </div>
-            </div>
+        <button class="bg-emergency text-white px-6 py-2.5 rounded-xl font-black uppercase tracking-widest text-[10px] hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/20 active:scale-95 transition-all">
+            Explore Gear
+        </button>
+
+    </div>
+</div>
+<div class="group relative h-[350px] md:h-[400px] overflow-hidden rounded-[2.5rem] bg-slate-900 shadow-xl cursor-pointer border border-transparent dark:border-gray-800">
+    <img src="assets/winter" alt="Winter Storm" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
+    
+    <div class="absolute inset-0 bg-gradient-to-tr from-slate-950 via-slate-900/40 to-transparent"></div>
+    
+    <div class="absolute bottom-0 left-0 p-8 text-left flex flex-col items-start">
+        
+        <h2 class="text-2xl md:text-3xl font-black text-white uppercase italic tracking-tighter">
+            Winter Storm
+        </h2>
+
+        <p class="text-slate-400 text-[10px] mt-2 mb-6 tracking-[0.3em] uppercase font-bold">
+            Thermal Endurance Gear
+        </p>
+
+        <button class="bg-emergency text-white px-8 py-3 rounded-xl font-black uppercase tracking-widest text-[10px] hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/20 active:scale-95 transition-all">
+            Explore Gear
+        </button>
+
+    </div>
+</div>
+
+      <div class="group relative h-[350px] md:h-[400px] overflow-hidden rounded-[2.5rem] bg-slate-900 shadow-xl cursor-pointer border border-transparent dark:border-gray-800">
+    <img src="assets/simg1" alt="Winter Jacket" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
+    
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent"></div>
+    
+    <div class="absolute bottom-0 left-0 p-8 text-left w-full flex flex-col items-start">
+        
+        <h2 class="text-2xl md:text-3xl font-black text-white uppercase italic tracking-tighter">
+            Winter Jacket
+        </h2>
+
+        <p class="text-slate-400 text-[10px] mt-2 mb-6 tracking-[0.3em] uppercase font-bold">
+            Thermal Endurance Gear
+        </p>
+
+        <button class="bg-emergency text-white px-8 py-3 rounded-xl font-black uppercase tracking-widest text-[10px] hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/20 active:scale-95 transition-all">
+            Explore Gear
+        </button>
+
+    </div>
+</div>
 
         </div>
     </div>
@@ -505,10 +568,9 @@
         
         <div class="space-y-6">
             <div>
-                <a href="index.html">
-                                    <h3 class="font-bold text-2xl mb-4 text-emergency tracking-tighter">SAFEGUARD</h3>
-
-                </a>
+               <a href="index.html" class="flex-shrink-0 font-black text-2xl text-emergency italic tracking-tighter cursor-pointer">
+                SAFEGUARD
+            </a>
                 <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
                     Your number one source for emergency readiness and survival supplies since 2024. Protecting families with grade-A tactical gear.
                 </p>
